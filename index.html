@@ -82,9 +82,7 @@
 
   <main class="main">
 
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style>
-
-
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
       <div class="hero-container" data-aos="fade-in">
         <h1>Gabriel Morais</h1>
         <p>Sou <span class="typed"
@@ -95,11 +93,10 @@
           <button class="button">Download Currículo</button>
         </a>
       </div>
-      </div>
-
-
-      </div>
-
+      <!-- Botão para descer para a próxima seção -->
+      <a href="#about" id="scroll-down" class="scroll-down d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-down-short"></i>
+      </a>
     </section>
 
     <!-- About Section -->
@@ -201,7 +198,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-github"></i>
-              <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="2"
                 class="purecounter"></span>
               <p>
                 <strong>Seguidores GitHub</strong>
@@ -212,7 +209,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-linkedin"></i>
-              <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="800" data-purecounter-duration="2"
                 class="purecounter"></span>
               <p>
                 <strong>Conexões LinkedIn</strong>
@@ -231,65 +228,60 @@
     <div class="row portfolio-container">
       <!-- Projeto 1: Imobiliária CRM -->
       <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
+        <div class="card mb-4 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Sistema de gestão e vendas para imobiliária">
           <a href="https://imobiliaria-green.vercel.app/imobiliaria/login" target="_blank">
             <iframe src="https://imobiliaria-green.vercel.app/imobiliaria/login" title="CRM Imobiliária" style="width:100%; height:200px; border:0;"></iframe>
           </a>
-          <div class="portfolio-info">
-            <h4>CRM Imobiliária</h4>
-            <p>Gestão e vendas</p>
+          <div class="card-body">
+            <h5 class="card-title">CRM Imobiliária</h5>
             <a href="https://imobiliaria-green.vercel.app/imobiliaria/login" target="_blank" class="btn btn-primary">Abrir Projeto</a>
           </div>
         </div>
       </div>
       <!-- Projeto 2: React Ball Animation -->
       <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
+        <div class="card mb-4 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Animação 3D interativa em React">
           <a href="https://react-ball-animation.vercel.app/" target="_blank">
             <iframe src="https://react-ball-animation.vercel.app/" title="React Ball Animation" style="width:100%; height:200px; border:0;"></iframe>
           </a>
-          <div class="portfolio-info">
-            <h4>React Ball Animation</h4>
-            <p>Animação 3D interativa</p>
+          <div class="card-body">
+            <h5 class="card-title">React Ball Animation</h5>
             <a href="https://react-ball-animation.vercel.app/" target="_blank" class="btn btn-primary">Abrir Projeto</a>
           </div>
         </div>
       </div>
       <!-- Projeto 3: ASCII Donut -->
       <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
+        <div class="card mb-4 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Arte em texto: Donut em ASCII">
           <a href="https://ascii-donut.vercel.app/" target="_blank">
             <iframe src="https://ascii-donut.vercel.app/" title="ASCII Donut" style="width:100%; height:200px; border:0;"></iframe>
           </a>
-          <div class="portfolio-info">
-            <h4>ASCII Donut</h4>
-            <p>Arte em texto</p>
+          <div class="card-body">
+            <h5 class="card-title">ASCII Donut</h5>
             <a href="https://ascii-donut.vercel.app/" target="_blank" class="btn btn-primary">Abrir Projeto</a>
           </div>
         </div>
       </div>
       <!-- Projeto 4: Scheduler -->
       <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
+        <div class="card mb-4 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Sistema de agendamento customizado">
           <a href="https://scheduler-frontend-dun.vercel.app/novo-agendamento" target="_blank">
             <iframe src="https://scheduler-frontend-dun.vercel.app/novo-agendamento" title="Scheduler" style="width:100%; height:200px; border:0;"></iframe>
           </a>
-          <div class="portfolio-info">
-            <h4>Scheduler</h4>
-            <p>Agendador customizado</p>
+          <div class="card-body">
+            <h5 class="card-title">Scheduler</h5>
             <a href="https://scheduler-frontend-dun.vercel.app/novo-agendamento" target="_blank" class="btn btn-primary">Abrir Projeto</a>
           </div>
         </div>
       </div>
       <!-- Projeto 5: Clínica Odontológica -->
       <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
+        <div class="card mb-4 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Agendamento online para clínica odontológica">
           <a href="https://clinica-odontologica-pi.vercel.app/cadastro-paciente" target="_blank">
             <iframe src="https://clinica-odontologica-pi.vercel.app/cadastro-paciente" title="Clínica Odontológica" style="width:100%; height:200px; border:0;"></iframe>
           </a>
-          <div class="portfolio-info">
-            <h4>Clínica Odontológica</h4>
-            <p>Agendamento fácil</p>
+          <div class="card-body">
+            <h5 class="card-title">Clínica Odontológica</h5>
             <a href="https://clinica-odontologica-pi.vercel.app/cadastro-paciente" target="_blank" class="btn btn-primary">Abrir Projeto</a>
           </div>
         </div>
@@ -442,7 +434,7 @@
                 </div>
         
                 <div class="resume-item">
-                  <h4>Ensino Médio Completo</h4>
+                  <h4>Ensino Médio Completo</highlight>
                  
                   <p><em>Colégio Cenecista Dr. José Ferreira, Uberaba - MG</em></p>
                   <p>
@@ -483,8 +475,10 @@
               </div>
     
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.452680383163!2d-46.68617262486925!3d-23.59773446285688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce576e43b1f78b%3A0x6d9f2dd2b5f23b8f!2sPerdizes%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710187083000"
-                frameborder="0" style="width:100%; height:290px; border:0;" allowfullscreen="" loading="lazy"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.826087135444!2d-46.64808392486859!3d-23.564734962973054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c785b9c24d%3A0x33a0e9c2d14a5f23!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710187083000"
+              frameborder="0" style="width:100%; height:290px; border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+            
     
             </div>
           </div>

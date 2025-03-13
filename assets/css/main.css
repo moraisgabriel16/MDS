@@ -1372,3 +1372,24 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+/* Botão scroll-down na página inicial */
+#scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+#scroll-down:hover {
+  background: rgba(255, 255, 255, 1);
+}
