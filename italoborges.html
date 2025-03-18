@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimentos Odontológicos e Preços</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Fonte moderna e profissional */
+            background-color: #f5f8fa; /* Fundo levemente azulado */
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px; /* Largura máxima para melhor legibilidade */
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-top: 2rem; /* Espaço no topo */
+            border-bottom: 1px solid #dee2e6; /* Linha divisória sutil */
+            padding-bottom: 1rem;
+        }
+        .header h1 {
+            color: #007bff; /* Azul do Bootstrap, mais amigável */
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        /* Barra de busca */
+        .search-input {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Accordion customizado */
+        .accordion-item {
+            border: none; /* Remove bordas padrão */
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem; /* Bordas arredondadas */
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075); /* Sombra sutil */
+             background-color: white; /* Fundo branco para os itens */
+        }
+        .accordion-button {
+            font-size: 1.1rem;
+            color: #212529; /* Cor do texto mais escura */
+            background-color: transparent; /* Fundo transparente */
+            border: none;
+            font-weight: 500; /* Um pouco mais bold */
+            padding: 1rem 1.25rem;
+            border-radius: 0.5rem; /* Bordas arredondadas */
+        }
+        .accordion-button:not(.collapsed) {
+            color: #007bff;
+            background-color: rgba(0, 123, 255, 0.05); /* Fundo azul claro quando aberto */
+            box-shadow: none; /* Remove a sombra quando aberto */
+             font-weight: 600;
+        }
+        .accordion-button:focus {
+            z-index: 3;
+            border-color: transparent;
+            outline: 0;
+            box-shadow: none; /* Remove o foco padrão */
+        }
+        .accordion-body {
+            padding: 0; /* Remove padding */
+        }
+        .list-group-item {
+            padding: 0.75rem 1.25rem; /* Padding ajustado */
+            border: none;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+              background-color: transparent; /* Fundo transparente na lista */
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .procedure-name {
+            font-size: 1rem;
+            color: #495057;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #007bff;
+            white-space: nowrap;
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem; /* Bordas totalmente arredondadas */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ocupa a largura total */
+            max-width: 400px; /* Largura máxima */
+            margin-left: auto; /* Centraliza horizontalmente */
+            margin-right: auto;
+        }
+        .whatsapp-link:hover {
+            background-color: #128c7e;
+            color: white; /* Garante que a cor permaneça branca */
+        }
+
+        .whatsapp-link i {
+            font-size: 1.5rem;
+        }
+        /* Tooltip customizado (CSS) */
+        .tooltip-custom {
+            position: relative; /* Para o posicionamento absoluto do tooltip */
+
+        }
+
+        .tooltip-custom .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;  /*Posiciona acima*/
+            left: 50%;
+            margin-left: -70px; /* Metade da largura para centralizar */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Seta do tooltip */
+        .tooltip-custom .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent; /*Seta para cima*/
+        }
+
+        .tooltip-custom:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Loading spinner (CSS) */
+        .loader-container {
+            display: none; /* Inicialmente oculto */
+            position: fixed; /* Fixo na tela */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+            z-index: 9999; /* Acima de tudo */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; /* Círculo externo */
+            border-top: 8px solid #3498db; /* Cor do spinner */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite; /* Animação */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Procedimentos Odontológicos e Preços</h1>
+            <p>Confira nossa lista de procedimentos e valores.</p>
+        </div>
+
+        <div class="mb-3 search-input">
+            <input type="text" class="form-control" id="search" placeholder="Buscar procedimento..." onkeyup="filterProcedures()">
+        </div>
+
+        <div class="accordion" id="proceduresAccordion">
+             <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCeramica">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCeramica" aria-expanded="false" aria-controls="collapseCeramica">
+                        Cerâmica Pura
+                    </button>
+                </h2>
+                <div id="collapseCeramica" class="accordion-collapse collapse" aria-labelledby="headingCeramica" data-bs-parent="#proceduresAccordion">
+                    <div class="accordion-body">
+                        <div class="procedure-list list-group">
+                            <div class="list-group-item" data-category="ceramica">
+                                <span class="procedure-name">Coroa Total Cerâmica Pura (Emax) Injetada</span>
+                                <span class="price tooltip-custom">R$400,00
+                                    <span class="tooltiptext">Preço por unidade</span>
+                                </span>
+                            </div>
+                            <div class="list-group-item" data-category="ceramica">
+                                <span class="procedure-name">Coroa Total Cerâmica Pura (Emax) Fresada</span>
+                                <span class="price">R$450,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="ceramica">
+                                <span class="procedure-name">Coroa Onlay/Inlay Cerâmica Pura (Emax) Injetada</span>
+                                <span class="price">R$400,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="ceramica">
+                                <span class="procedure-name">Coroa Onlay/Inlay Cerâmica Pura (Emax) Fresada</span>
+                                <span class="price">R$450,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="ceramica">
+                                <span class="procedure-name">Lente de Contato/Facetas Dissilicato de Lítio Fresada</span>
+                                <span class="price">R$470,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingZirconia">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZirconia" aria-expanded="false" aria-controls="collapseZirconia">
+                        Zircônia
+                    </button>
+                </h2>
+                <div id="collapseZirconia" class="accordion-collapse collapse" aria-labelledby="headingZirconia" data-bs-parent="#proceduresAccordion">
+                    <div class="accordion-body">
+                        <div class="list-group procedure-list">
+                            <div class="list-group-item" data-category="zirconia">
+                                <span class="procedure-name">Coroa Total Zircônia sobre Dente</span>
+                                <span class="price">R$350,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="zirconia">
+                                <span class="procedure-name">Coroa Total Zircônia sobre Implante</span>
+                                <span class="price">R$350,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="zirconia">
+                                <span class="procedure-name">Protocolo Cerâmico de Zircônia</span>
+                                <span class="price">R$5.500,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="zirconia">
+                                <span class="procedure-name">Aplicação de Gengiva Artificial</span>
+                                <span class="price">R$60,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMetaloceramica">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMetaloceramica" aria-expanded="false" aria-controls="collapseMetaloceramica">
+                        Metalocerâmica
+                    </button>
+                </h2>
+                <div id="collapseMetaloceramica" class="accordion-collapse collapse" aria-labelledby="headingMetaloceramica" data-bs-parent="#proceduresAccordion">
+                    <div class="accordion-body">
+                      <div class="list-group procedure-list">
+                        <div class="list-group-item" data-category="metaloceramica">
+                            <span class="procedure-name">Coroa Total Metalocerâmica sobre Preparo</span>
+                            <span class="price">R$300,00</span>
+                        </div>
+                        <div class="list-group-item" data-category="metaloceramica">
+                            <span class="procedure-name">Coroa Total Metalocerâmica sobre Implante</span>
+                            <span class="price">R$310,00</span>
+                        </div>
+                        <div class="list-group-item" data-category="metaloceramica">
+                            <span class="procedure-name">Aplicação de Gengiva Artificial</span>
+                            <span class="price">R$60,00</span>
+                        </div>
+                        <div class="list-group-item" data-category="metaloceramica">
+                            <span class="procedure-name">Protocolo Metalocerâmico</span>
+                            <span class="price">R$ A Combinar</span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingResina">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResina" aria-expanded="false" aria-controls="collapseResina">
+                        Resina
+                    </button>
+                </h2>
+                <div id="collapseResina" class="accordion-collapse collapse" aria-labelledby="headingResina" data-bs-parent="#proceduresAccordion">
+                    <div class="accordion-body">
+                       <div class="procedure-list list-group">
+                            <div class="list-group-item" data-category="resina">
+                                <span class="procedure-name">Coroa Total Cerômero</span>
+                                <span class="price">R$200,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="resina">
+                                <span class="procedure-name">Coroa Onlay/Inlay Cerômero</span>
+                                <span class="price">R$200,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="resina">
+                                <span class="procedure-name">Coroa Provisória</span>
+                                <span class="price">R$100,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingProteseAcrilica">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProteseAcrilica" aria-expanded="false" aria-controls="collapseProteseAcrilica">
+                        Prótese Acrílica
+                    </button>
+                </h2>
+                <div id="collapseProteseAcrilica" class="accordion-collapse collapse" aria-labelledby="headingProteseAcrilica" data-bs-parent="#proceduresAccordion">
+                    <div class="accordion-body">
+                        <div class="procedure-list list-group">
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Total Simples (Provisória)</span>
+                                <span class="price">R$320,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Total Palato Incolor</span>
+                                <span class="price">R$380,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Total Caracterizada</span>
+                                <span class="price">R$500,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Parcial Removível</span>
+                                <span class="price">R$600,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Parcial Removível Provisória</span>
+                                <span class="price">R$320,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Parcial Removível Flexível</span>
+                                <span class="price">R$1.100,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Overdenture</span>
+                                <span class="price">R$800,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Protocolo Acrílico com Estrutura Metálica</span>
+                                <span class="price">R$1.400,00</span>
+                            </div>
+                            <div class="list-group-item" data-category="protese_acrilica">
+                                <span class="procedure-name">Prótese Protocolo Acrílico Fresado Provisória</span>
+                                <span class="price">R$ A Combinar</span>
+                            </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/553491507902" class="whatsapp-link" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+            WhatsApp para Orçamentos
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Função para mostrar o loader
+            function showLoader() {
+                document.querySelector('.loader-container').style.display = 'flex';
+            }
+
+            // Função para ocultar o loader
+            function hideLoader() {
+                document.querySelector('.loader-container').style.display = 'none';
+            }
+
+            // Função de filtro (modificada para lidar com o loader)
+            function filterProcedures() {
+                showLoader(); // Mostra o loader
+
+                // Usa setTimeout para simular um atraso (como uma requisição AJAX)
+                setTimeout(() => {
+                    let input = document.getElementById("search").value.toLowerCase();
+                    let items = document.querySelectorAll(".list-group-item");
+                    let accordionItems = document.querySelectorAll(".accordion-item");
+
+                    items.forEach(item => {
+                        let text = item.innerText.toLowerCase();
+                        let category = item.dataset.category.toLowerCase();
+
+                        if (text.includes(input) || category.includes(input)) {
+                            item.style.display = "flex";
+                            let accordionItem = item.closest('.accordion-item');
+                            let button = accordionItem.querySelector('.accordion-button');
+
+                            if (button.classList.contains('collapsed')) {
+                                let bsCollapse = new bootstrap.Collapse(accordionItem.querySelector('.accordion-collapse'), {
+                                    toggle: true
+                                });
+                            }
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+
+                    accordionItems.forEach(accordionItem => {
+                        let anyVisible = false;
+                        accordionItem.querySelectorAll('.list-group-item').forEach(item => {
+                            if (item.style.display !== 'none') {
+                                anyVisible = true;
+                            }
+                        });
+
+                        accordionItem.style.display = anyVisible ? 'block' : 'none';
+
+                        if(!anyVisible){
+                            let bsCollapse = new bootstrap.Collapse(accordionItem.querySelector('.accordion-collapse'), {
+                                    toggle: false
+                            });
+                        }
+                    });
+
+                    hideLoader(); // Oculta o loader após o processamento
+                }, 200); // Simula um atraso de 200ms (ajuste conforme necessário)
+            }
+
+
+            // Inicializa os tooltips (opcional, se você quiser tooltips)
+            //  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            //  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
+            // Fecha todos os accordions inicialmente
+            document.querySelectorAll('.accordion-collapse').forEach(collapse => {
+                new bootstrap.Collapse(collapse, {
+                    toggle: false
+                });
+            });
+
+            // Adiciona o event listener ao campo de busca
+            document.getElementById('search').addEventListener('keyup', filterProcedures);
+        });
+    </script>
+</body>
+</html>
