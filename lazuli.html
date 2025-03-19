@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serviços dos Moradores do Lazúli</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- Sua folha de estilo principal -->
+  <link rel="stylesheet" href="assets/css/lazuli.css" />
+</head>
+<body>
+
+  <!-- ===== Seção Hero (cabeçalho) ===== -->
+  <header class="hero-section text-white d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">Serviços dos Moradores do Lazúli</h1>
+      <p class="lead">
+        Promovendo a interação e ajudando no serviço local.
+      </p>
+      <a href="#servicesSection" class="btn btn-lg btn-light fw-bold mt-3">
+        Confira os Serviços
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Seção de Conteúdo Principal ===== -->
+  <main class="container my-5" id="servicesSection">
+    <!-- Título interno, se desejar -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Nossos Serviços</h2>
+      <p class="text-muted">Conheça os serviços oferecidos pelos nossos vizinhos.</p>
+    </div>
+
+    <!-- Campo de busca -->
+    <div class="mb-4 mx-auto" style="max-width: 400px;">
+      <div class="input-group">
+        <span class="input-group-text bg-white">
+          <i class="bi bi-search"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          id="search"
+          placeholder="Buscar serviço..."
+        />
+      </div>
+    </div>
+
+    <!-- Accordion de serviços -->
+    <div class="accordion" id="servicesAccordion">
+      <!-- Babá -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingBaba">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseBaba"
+            aria-expanded="false"
+            aria-controls="collapseBaba"
+          >
+            Babá
+          </button>
+        </h2>
+        <div
+          id="collapseBaba"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingBaba"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="baba">
+                <span>Emily - Torre 2</span>
+                <a href="https://wa.me/11974021421" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="baba">
+                <span>Hayde - Torre 3</span>
+                <a href="https://wa.me/11939587668" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="baba">
+                <span>Carmem - Torre 4</span>
+                <a href="https://wa.me/11953427470" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bordados -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingBordados">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseBordados"
+            aria-expanded="false"
+            aria-controls="collapseBordados"
+          >
+            Bordados
+          </button>
+        </h2>
+        <div
+          id="collapseBordados"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingBordados"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="bordados">
+                <span>Cida - Torre 2</span>
+                <a href="https://wa.me/11971671059" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consultor de Benefícios e Seguros -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingConsultor">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseConsultor"
+            aria-expanded="false"
+            aria-controls="collapseConsultor"
+          >
+            Consultor de Benefícios e Seguros
+          </button>
+        </h2>
+        <div
+          id="collapseConsultor"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingConsultor"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="consultor">
+                <span>Valquíria - Torre 2</span>
+                <a href="https://wa.me/11976866395" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contador(a) -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingContador">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseContador"
+            aria-expanded="false"
+            aria-controls="collapseContador"
+          >
+            Contador(a)
+          </button>
+        </h2>
+        <div
+          id="collapseContador"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingContador"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="contador">
+                <span>Lucas Oliveira - Torre 4</span>
+                <a href="https://wa.me/11988998415" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="contador">
+                <span>Erica Santana - Torre 4</span>
+                <a href="https://wa.me/11911351749" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corretor(a) de imóveis -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingCorretor">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseCorretor"
+            aria-expanded="false"
+            aria-controls="collapseCorretor"
+          >
+            Corretor(a) de imóveis
+          </button>
+        </h2>
+        <div
+          id="collapseCorretor"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingCorretor"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="corretor">
+                <span>Alessandro - Torre 1</span>
+                <a href="https://wa.me/11972296075" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="corretor">
+                <span>Ingrid Messias - Torre 1</span>
+                <a href="https://wa.me/11994227195" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Costureira -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingCostureira">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseCostureira"
+            aria-expanded="false"
+            aria-controls="collapseCostureira"
+          >
+            Costureira
+          </button>
+        </h2>
+        <div
+          id="collapseCostureira"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingCostureira"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="costureira">
+                <span>Fabiana Rosendo - Torre 3</span>
+                <a href="https://wa.me/11959206529" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="costureira">
+                <span>Fatima - Torre 4</span>
+                <a href="https://wa.me/11984599856" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diarista -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingDiarista">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseDiarista"
+            aria-expanded="false"
+            aria-controls="collapseDiarista"
+          >
+            Diarista
+          </button>
+        </h2>
+        <div
+          id="collapseDiarista"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingDiarista"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="diarista">
+                <span>Daniele - Torre 1</span>
+                <a href="https://wa.me/11972885100" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enfermeiro -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingEnfermeiro">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEnfermeiro"
+            aria-expanded="false"
+            aria-controls="collapseEnfermeiro"
+          >
+            Enfermeiro
+          </button>
+        </h2>
+        <div
+          id="collapseEnfermeiro"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEnfermeiro"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="enfermeiro">
+                <span>Manoel Novais - Torre 1</span>
+                <a href="https://wa.me/11966414933" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entregador de aplicativo -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingEntregador">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEntregador"
+            aria-expanded="false"
+            aria-controls="collapseEntregador"
+          >
+            Entregador de aplicativo
+          </button>
+        </h2>
+        <div
+          id="collapseEntregador"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEntregador"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="entregador">
+                <span>Andre - Torre 1</span>
+                <a href="https://wa.me/11983951071" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="entregador">
+                <span>Thiago Lacerda - Torre 1</span>
+                <a href="https://wa.me/11913129639" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impressões -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingImpressoes">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseImpressoes"
+            aria-expanded="false"
+            aria-controls="collapseImpressoes"
+          >
+            Impressões
+          </button>
+        </h2>
+        <div
+          id="collapseImpressoes"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingImpressoes"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="impressoes">
+                <span>Antonio - Torre 3</span>
+                <a href="https://wa.me/11945746522" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motorista de táxi e aplicativo -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingMotorista">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseMotorista"
+            aria-expanded="false"
+            aria-controls="collapseMotorista"
+          >
+            Motorista de táxi e aplicativo
+          </button>
+        </h2>
+        <div
+          id="collapseMotorista"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingMotorista"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="motorista">
+                <span>Lucas - Torre 3</span>
+                <a href="https://wa.me/11977877654" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="motorista">
+                <span>Thiago Lacerda - Torre 1</span>
+                <a href="https://wa.me/11913129639" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personalização de canecas e blusas -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingPersonalizacao">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsePersonalizacao"
+            aria-expanded="false"
+            aria-controls="collapsePersonalizacao"
+          >
+            Personalização de canecas e blusas
+          </button>
+        </h2>
+        <div
+          id="collapsePersonalizacao"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingPersonalizacao"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="personalizacao">
+                <span>Camila - Torre 1</span>
+                <a href="https://wa.me/11960693984" class="text-primary">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Petsister (Cuidadora de pets) -->
+      <div class="accordion-item shadow-sm">
+        <h2 class="accordion-header" id="headingPetsister">
+          <button
+            class="accordion-button collapsed fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsePetsister"
+            aria-expanded="false"
+            aria-controls="collapsePetsister"
+          >
+            Petsister (Cuidadora de pets)
+          </button>
+        </h2>
+        <div
+          id="collapsePetsister"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingPetsister"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body">
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="petsister">
+                <span>Beatriz - Torre 2</span>
+                <a href="https://wa.me/11942029310" class="text-primary">WhatsApp</a>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-category="petsister">
+                <span>Kelly - Torre 3</span>
+                <a href="https://wa.me/21964484653" class="text-primary">WhatsApp</a>
+              </div>
+              </div>
+              </div>
+              </div>
+              
+              <!-- Professor(a) particular -->
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingProfessor">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseProfessor"
+                    aria-expanded="false"
+                    aria-controls="collapseProfessor"
+                  >
+                    Professor(a) particular
+                  </button>
+                </h2>
+                <div
+                  id="collapseProfessor"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingProfessor"
+                  data-bs-parent="#servicesAccordion"
+                >
+                  <div class="accordion-body">
+                    <div class="list-group">
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="professor">
+                        <span>Juliana (Prof. Inglês) - Torre 4</span>
+                        <a href="https://wa.me/11944033181" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="professor">
+                        <span>Kelly (Prof. Espanhol) - Torre 3</span>
+                        <a href="https://wa.me/21964484653" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="professor">
+                        <span>Miguel (Prof. Música) - Torre 2</span>
+                        <a href="https://wa.me/11984258583" class="text-primary">WhatsApp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Técnicos e manutenção -->
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingTecnicos">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTecnicos"
+                    aria-expanded="false"
+                    aria-controls="collapseTecnicos"
+                  >
+                    Técnicos e manutenção
+                  </button>
+                </h2>
+                <div
+                  id="collapseTecnicos"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTecnicos"
+                  data-bs-parent="#servicesAccordion"
+                >
+                  <div class="accordion-body">
+                    <div class="list-group">
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Gustavo (Tec. computador) - Torre 4</span>
+                        <a href="https://wa.me/11959948548" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Thiago (Serviços em geral) - Torre 1</span>
+                        <a href="https://wa.me/11959336257" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Dinei (Serviços em geral) - Torre 2</span>
+                        <a href="https://wa.me/11979657148" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Paulo (Eletricista) - Torre 3</span>
+                        <a href="https://wa.me/11957077695" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Fagner (Instalador de insulfilm) - Torre 1</span>
+                        <a href="https://wa.me/11966629824" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Jadiel (Vidraceiro) - Torre 4</span>
+                        <a href="https://wa.me/11994032474" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="tecnicos">
+                        <span>Flávio (Mecânico) - Torre 2</span>
+                        <a href="https://wa.me/11979625883" class="text-primary">WhatsApp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Trabalhos sociais e de Saúde -->
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingTrabalhosSociais">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTrabalhosSociais"
+                    aria-expanded="false"
+                    aria-controls="collapseTrabalhosSociais"
+                  >
+                    Trabalhos sociais e de Saúde
+                  </button>
+                </h2>
+                <div
+                  id="collapseTrabalhosSociais"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTrabalhosSociais"
+                  data-bs-parent="#servicesAccordion"
+                >
+                  <div class="accordion-body">
+                    <div class="list-group">
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Miriam Alves (Assist. Social) - Torre 2</span>
+                        <a href="https://wa.me/11977060399" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Gabriella (Psicóloga) - Torre 2</span>
+                        <a href="https://wa.me/11947237435" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Natália (Psicóloga) - Torre 2</span>
+                        <a href="https://wa.me/11947162895" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Caroline (Enfermeira) - Torre 3</span>
+                        <a href="https://wa.me/11959377944" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Agatha (Esteticista) - Torre 2</span>
+                        <a href="https://wa.me/11948197099" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Mariana (Psicóloga) - Torre 1</span>
+                        <a href="https://wa.me/11920103922" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Fabiana (Enfermeira) - Torre 3</span>
+                        <a href="https://wa.me/11982837740" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Ingrid (Psicóloga) - Torre 1</span>
+                        <a href="https://wa.me/11967235632" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Mariana (Psicóloga) - Torre 1</span>
+                        <a href="https://wa.me/11920103922" class="text-primary">WhatsApp</a>
+                      </div>
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="trabalhossociais">
+                        <span>Érica (Massoterapeuta) - Torre 3</span>
+                        <a href="https://wa.me/11963412950" class="text-primary">WhatsApp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Viagens e Turismo -->
+              <div class="accordion-item shadow-sm">
+                <h2 class="accordion-header" id="headingViagens">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseViagens"
+                    aria-expanded="false"
+                    aria-controls="collapseViagens"
+                  >
+                    Viagens e Turismo
+                  </button>
+                </h2>
+                <div
+                  id="collapseViagens"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingViagens"
+                  data-bs-parent="#servicesAccordion"
+                >
+                  <div class="accordion-body">
+                    <div class="list-group">
+                      <div class="list-group-item d-flex justify-content-between align-items-center" data-category="viagens">
+                        <span>Hugo (Agente de viagens CVC) - Torre 4</span>
+                        <a href="https://wa.me/11976583148" class="text-primary">WhatsApp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              </div><!-- Fim do accordion -->
+              
+              <!-- Botões de ação -->
+              <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-5">
+                <a
+                  href="https://chat.whatsapp.com/DOKOVhkkqJ0HUpYS9p4NM8"
+                  class="btn btn-success btn-lg d-flex align-items-center justify-content-center gap-2"
+                  target="_blank"
+                >
+                  <i class="bi bi-whatsapp fs-4"></i>
+                  Grupo de Vendas
+                </a>
+              </div>
+              </main>
+              
+              <!-- ===== Rodapé (Footer) ===== -->
+              <footer class="bg-dark text-white py-4 mt-5">
+                <div class="container text-center">
+                  <p class="mb-0">
+                    &copy; 2025 - Morais Digital Solutions. Todos os direitos reservados.
+                  </p>
+                </div>
+              </footer>
+              
+              <!-- Bootstrap JS -->
+              <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+              ></script>
+              
+              <!-- Script Principal -->
+              <script src="assets/js/lazuli.js"></script>
+              </body>
+              </html>

@@ -1,0 +1,77 @@
+/* ===== BODY GERAL ===== */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    overflow-x: hidden;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero-section {
+    background: linear-gradient(to right, #007bff, #6dd5ed);
+    min-height: 60vh;
+    position: relative;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* camada escura */
+    z-index: 1;
+  }
+  .hero-section h1,
+  .hero-section p,
+  .hero-section a {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* ===== ACCORDION ===== */
+  .accordion-button {
+    background-color: #fff;
+    color: #343a40;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  .accordion-button:not(.collapsed) {
+    color: #007bff;
+    background-color: #e9f2ff;
+  }
+  .accordion-item {
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .accordion-body {
+    background-color: #fdfdfd;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Sombras suaves */
+  .shadow-sm {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  }
+  
+  /* ===== LIST GROUP ITENS ===== */
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 0.75rem 1rem;
+  }
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* ===== BOTÕES ===== */
+  .btn.btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer.bg-dark {
+    position: relative;
+  }
