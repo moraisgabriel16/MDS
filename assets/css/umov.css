@@ -1,0 +1,81 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: linear-gradient(to right, #28a745, #155724); /* Fundo com gradiente verde */
+  min-height: 50vh; /* Reduzido de 70vh para 50vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #28a745; /* Título em verde */
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: white; /* Fontes em branco */
+}
+
+.hero-section a {
+  font-size: 1.2rem;
+  padding: 0.75rem 2rem;
+  background-color: #212529;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section a:hover {
+  background-color: #28a745;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section h2 {
+  font-size: 2rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+}
+
+/* ===== PLANS SECTION ===== */
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
