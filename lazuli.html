@@ -40,6 +40,7 @@
 
   <!-- ===== Seção de Conteúdo Principal ===== -->
   <main class="container my-5" id="servicesSection">
+    <!-- Título interno -->
     <div class="text-center mb-5">
       <h2 class="fw-bold">Nossos Serviços</h2>
       <p class="text-muted">Conheça os serviços oferecidos pelos nossos vizinhos.</p>
@@ -47,7 +48,7 @@
 
     <!-- Accordion de serviços -->
     <div class="accordion" id="servicesAccordion">
-      <!-- Dados dinâmicos serão carregados aqui -->
+      <!-- Categorias e serviços serão carregados dinamicamente -->
     </div>
 
     <!-- Botões de ação -->
@@ -62,6 +63,23 @@
       </a>
     </div>
   </main>
+
+  <!-- Modal para listar pessoas por categoria -->
+  <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="categoryModalLabel">Pessoas da Categoria</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group" id="categoryList">
+            <!-- Lista de pessoas será carregada dinamicamente -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== Rodapé (Footer) ===== -->
   <footer class="bg-dark text-white py-4 mt-5">
@@ -79,61 +97,5 @@
 
   <!-- Script Principal -->
   <script src="assets/js/lazuli.js"></script>
-  <script>
-    async function fetchServices() {
-      const loader = document.querySelector('.loader-container');
-      loader.style.display = 'flex'; // Mostrar o loader
-  
-      try {
-        const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services'); // Altere para o domínio do backend no deploy
-        if (response.ok) {
-          const services = await response.json();
-          const servicesAccordion = document.getElementById('servicesAccordion');
-          servicesAccordion.innerHTML = ''; // Limpar conteúdo existente
-  
-          services.forEach((service, index) => {
-            const serviceItem = `
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="heading${index}">
-                  <button
-                    class="accordion-button ${index === 0 ? '' : 'collapsed'}"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse${index}"
-                    aria-expanded="${index === 0 ? 'true' : 'false'}"
-                    aria-controls="collapse${index}"
-                  >
-                    ${service.name} - ${service.category}
-                  </button>
-                </h2>
-                <div
-                  id="collapse${index}"
-                  class="accordion-collapse collapse ${index === 0 ? 'show' : ''}"
-                  aria-labelledby="heading${index}"
-                  data-bs-parent="#servicesAccordion"
-                >
-                  <div class="accordion-body">
-                    <p><strong>Contato:</strong> ${service.contact}</p>
-                    <p><strong>Torre:</strong> ${service.tower}</p>
-                  </div>
-                </div>
-              </div>
-            `;
-            servicesAccordion.innerHTML += serviceItem;
-          });
-        } else {
-          alert('Erro ao buscar serviços.');
-        }
-      } catch (error) {
-        console.error('Erro ao buscar serviços:', error);
-        alert('Erro ao buscar serviços. Tente novamente mais tarde.');
-      } finally {
-        loader.style.display = 'none'; // Ocultar o loader
-      }
-    }
-  
-    // Carregar serviços ao carregar a página
-    document.addEventListener('DOMContentLoaded', fetchServices);
-  </script>
 </body>
 </html>

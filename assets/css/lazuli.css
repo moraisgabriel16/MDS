@@ -61,16 +61,41 @@ body {
 .list-group-item {
   border: none;
   border-bottom: 1px solid #eee;
-  padding: 0.75rem 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .list-group-item:last-child {
   border-bottom: none;
+}
+.list-group-item span {
+  font-size: 1rem;
+  color: #343a40;
+}
+.list-group-item strong {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+/* ===== LISTA DE SERVIÇOS ===== */
+.list-group {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 /* ===== BOTÕES ===== */
 .btn.btn-lg {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
+}
+
+/* ===== BOTÕES DE CATEGORIAS ===== */
+.btn-primary {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 /* ===== FOOTER ===== */
