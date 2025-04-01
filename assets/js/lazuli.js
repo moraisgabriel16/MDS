@@ -19,13 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
     viagens: "Viagens e Turismo",
   };
 
-  // Função para validar e formatar números de telefone
+  // Função para validar e formatar números de telefone no formato da API do WhatsApp
   function formatPhoneNumber(phone) {
     // Remove caracteres não numéricos
-    const cleaned = phone.replace(/\D/g, "");
-    // Verifica se o número tem o formato correto (exemplo: 55 + DDD + número)
-    if (cleaned.length >= 10 && cleaned.length <= 13) {
-      return `+${cleaned}`;
+    let cleaned = phone.replace(/\D/g, "");
+    // Adiciona o prefixo +55 se não estiver presente
+    if (!cleaned.startsWith("55")) {
+      cleaned = `55${cleaned}`;
+    }
+    // Verifica se o número tem o formato correto (55 + DDD + número)
+    if (cleaned.length === 13 || cleaned.length === 12) {
+      return cleaned; // Retorna o número formatado
     }
     console.warn(`Número de telefone inválido: ${phone}`);
     return null;
@@ -74,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
               return `
                 <div class="list-group-item d-flex justify-content-between align-items-center">
                   <span>${service.name} - Torre ${service.tower}</span>
-                  <a href="https://api.whatsapp.com/send/?phone=${formattedPhone}" class="text-primary">WhatsApp</a>
+                  <a href="https://api.whatsapp.com/send?phone=${formattedPhone}" class="text-primary">WhatsApp</a>
                 </div>
               `;
             })
