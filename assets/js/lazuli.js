@@ -125,5 +125,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Função para editar um serviço
+  async function editService(serviceId, updatedData) {
+    try {
+      const response = await fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao editar o serviço");
+      }
+
+      const updatedService = await response.json();
+      console.log("Serviço atualizado com sucesso:", updatedService);
+      // Atualize a interface ou recarregue os serviços
+      fetchServices();
+    } catch (error) {
+      console.error("Erro ao editar serviço:", error);
+      alert("Erro ao editar serviço. Tente novamente.");
+    }
+  }
+
+  // Exemplo de uso da função editService
+  // editService("serviceIdAqui", { name: "Novo Nome", category: "novaCategoria" });
+
   fetchServices();
 });
