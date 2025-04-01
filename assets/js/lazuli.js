@@ -19,6 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
     viagens: "Viagens e Turismo",
   };
 
+  // Função para validar e formatar números de telefone
+  function formatPhoneNumber(phone) {
+    // Remove caracteres não numéricos
+    const cleaned = phone.replace(/\D/g, "");
+    // Verifica se o número tem o formato correto (exemplo: 55 + DDD + número)
+    if (cleaned.length >= 10 && cleaned.length <= 13) {
+      return `+${cleaned}`;
+    }
+    console.warn(`Número de telefone inválido: ${phone}`);
+    return null;
+  }
+
   async function fetchServices() {
     const loader = document.querySelector(".loader-container");
     const accordion = document.getElementById("servicesAccordion");
@@ -49,14 +61,23 @@ document.addEventListener("DOMContentLoaded", function () {
         Object.keys(categories).forEach((category, index) => {
           const categoryName = categoryDisplayNames[category] || category;
           const servicesList = categories[category]
-            .map(
-              (service) => `
-              <div class="list-group-item d-flex justify-content-between align-items-center">
-                <span>${service.name} - Torre ${service.tower}</span>
-                <a href="https://api.whatsapp.com/send/?phone=${service.contact}" class="text-primary">WhatsApp</a>
-              </div>
-            `
-            )
+            .map((service) => {
+              const formattedPhone = formatPhoneNumber(service.contact);
+              if (!formattedPhone) {
+                return `
+                  <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>${service.name} - Torre ${service.tower}</span>
+                    <span class="text-danger">Contato inválido</span>
+                  </div>
+                `;
+              }
+              return `
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>${service.name} - Torre ${service.tower}</span>
+                  <a href="https://api.whatsapp.com/send/?phone=${formattedPhone}" class="text-primary">WhatsApp</a>
+                </div>
+              `;
+            })
             .join("");
 
           const accordionItem = `
