@@ -60,11 +60,20 @@ document.addEventListener("DOMContentLoaded", function () {
           categories[service.category].push(service);
         });
 
+        // Ordenar categorias em ordem alfabética
+        const sortedCategories = Object.keys(categories).sort();
+
         // Renderizar categorias e serviços no formato de accordion
         accordion.innerHTML = "";
-        Object.keys(categories).forEach((category, index) => {
+        sortedCategories.forEach((category, index) => {
           const categoryName = categoryDisplayNames[category] || category;
-          const servicesList = categories[category]
+
+          // Ordenar serviços dentro de cada categoria em ordem alfabética
+          const sortedServices = categories[category].sort((a, b) =>
+            a.name.localeCompare(b.name)
+          );
+
+          const servicesList = sortedServices
             .map((service) => {
               const formattedPhone = formatPhoneNumber(service.contact);
               if (!formattedPhone) {
