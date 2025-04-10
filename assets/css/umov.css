@@ -2,80 +2,73 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #f8f9fa;
   color: #212529;
-  margin: 0;
-  padding: 0;
 }
 
 /* ===== HERO SECTION ===== */
 .hero-section {
-  background: linear-gradient(to right, #28a745, #155724); /* Fundo com gradiente verde */
-  min-height: 50vh; /* Reduzido de 70vh para 50vh */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  background: linear-gradient(135deg, #28a745, #155724);
+  padding: 4rem 1rem;
   color: white;
-  padding: 2rem;
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #28a745; /* Título em verde */
 }
 
 .hero-section p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: white; /* Fontes em branco */
+  font-size: 1.25rem;
 }
 
-.hero-section a {
-  font-size: 1.2rem;
-  padding: 0.75rem 2rem;
+.btn-custom {
   background-color: #212529;
-  color: white;
+  color: #fff;
+  padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  text-decoration: none;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
-.hero-section a:hover {
-  background-color: #28a745;
+.btn-custom:hover {
+  background-color: #155724;
+  color: #fff;
 }
 
 /* ===== ABOUT SECTION ===== */
-.about-section h2 {
-  font-size: 2rem;
+.about-section .icon {
+  font-size: 3rem;
+  color: #28a745;
 }
 
-.about-section p {
-  font-size: 1rem;
+.about-section h5 {
+  font-weight: bold;
 }
 
 /* ===== PLANS SECTION ===== */
 .card {
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card-title {
-  font-size: 1.5rem;
+  color: #28a745;
+  font-weight: bold;
 }
 
 .card-text {
-  font-size: 1rem;
+  color: #6c757d;
 }
 
 /* ===== FOOTER ===== */
 footer {
   background-color: #212529;
   color: white;
-  text-align: center;
   padding: 1.5rem 0;
-  font-size: 0.9rem;
 }

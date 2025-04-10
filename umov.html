@@ -6,27 +6,24 @@
   <title>UMOV Studio</title>
 
   <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/umov.css" />
 </head>
 <body>
   <!-- Hero Section -->
-  <header class="hero-section text-white d-flex align-items-center">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold">UMOV Studio</h1>
-      <p class="lead">
+  <header class="hero-section text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h1>UMOV Studio</h1>
+      <p class="lead mt-3">
         Treinos personalizados com acompanhamento exclusivo para alcançar seus objetivos.
       </p>
-      <a href="#plansSection" class="btn btn-lg btn-success fw-bold mt-3">
+      <a href="#plansSection" class="btn btn-custom mt-4">
         Confira Nossos Planos
       </a>
     </div>
@@ -35,25 +32,25 @@
   <!-- About Section -->
   <section class="about-section py-5">
     <div class="container text-center">
-      <h2 class="fw-bold mb-4">Por Que Escolher Nosso Studio?</h2>
+      <h2 class="mb-4 fw-bold">Por Que Escolher Nosso Studio?</h2>
       <p class="text-muted mb-5">
-        Oferecemos treinos personalizados, acompanhamento exclusivo com personal trainers e um ambiente limitado a no máximo 6 pessoas por horário. Aqui, você terá toda a atenção que merece para alcançar seus objetivos.
+        Treinos exclusivos com personal trainers em turmas reduzidas, garantindo a atenção que você merece.
       </p>
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-4">
-          <i class="bi bi-person-check-fill text-success fs-1 mb-3"></i>
-          <h5 class="fw-bold">Acompanhamento Exclusivo</h5>
+          <i class="bi bi-person-check-fill icon"></i>
+          <h5 class="mt-3">Acompanhamento Exclusivo</h5>
           <p class="text-muted">Personal trainers dedicados a você em todas as aulas.</p>
         </div>
         <div class="col-md-4">
-          <i class="bi bi-calendar-check-fill text-success fs-1 mb-3"></i>
-          <h5 class="fw-bold">Horários Flexíveis</h5>
-          <p class="text-muted">De segunda a sexta, das 6h às 10h e das 18h às 21h.</p>
+          <i class="bi bi-calendar-check-fill icon"></i>
+          <h5 class="mt-3">Horários Flexíveis</h5>
+          <p class="text-muted">Segunda a sexta: 6h às 10h e 18h às 21h.</p>
         </div>
         <div class="col-md-4">
-          <i class="bi bi-people-fill text-success fs-1 mb-3"></i>
-          <h5 class="fw-bold">Turmas Reduzidas</h5>
-          <p class="text-muted">No máximo 6 pessoas por horário para garantir qualidade.</p>
+          <i class="bi bi-people-fill icon"></i>
+          <h5 class="mt-3">Turmas Reduzidas</h5>
+          <p class="text-muted">Máximo de 6 alunos por horário.</p>
         </div>
       </div>
     </div>
@@ -62,40 +59,35 @@
   <!-- Plans Section -->
   <section class="plans-section py-5 bg-light" id="plansSection">
     <div class="container text-center">
-      <h2 class="fw-bold mb-4">Nossos Planos</h2>
+      <h2 class="mb-4 fw-bold">Nossos Planos</h2>
       <p class="text-muted mb-5">
-        Escolha o plano ideal para você e comece sua transformação hoje mesmo.
+        Escolha o plano ideal e inicie sua transformação.
       </p>
-      <div class="row justify-content-center">
-        <!-- Plan 3x per week -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
-              <h3 class="card-title fw-bold text-success">3x por Semana</h3>
-              <p class="card-text text-muted fs-5">R$200 por mês</p>
-              <p class="text-muted">
-                Treinos personalizados com acompanhamento exclusivo.
-              </p>
-              <p class="text-muted">Horários limitados a 6 pessoas por aula.</p>
-              <a href="https://api.whatsapp.com/send/?phone=553484220483&text=3x+por+Semana+R%24200+por+m%C3%AAs++Treinos+personalizados+com+acompanhamento+exclusivo.++Hor%C3%A1rios+limitados+a+6+pessoas+por+aula.&type=phone_number&app_absent=0" class="btn btn-success btn-lg mt-3">
-                Quero Esse Plano
+      <div class="row g-4 justify-content-center">
+        <!-- Plano 3x -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3">
+            <div class="card-body">
+              <h3 class="card-title">3x por Semana</h3>
+              <h4 class="fw-bold">R$200/mês</h4>
+              <p class="card-text">Treinos personalizados e exclusivos.</p>
+              <p class="card-text">Máximo 6 alunos por turma.</p>
+              <a href="https://api.whatsapp.com/send/?phone=553484220483&text=Quero+o+plano+3x+por+semana" class="btn btn-success mt-3">
+                Quero Este Plano
               </a>
             </div>
           </div>
         </div>
-
-        <!-- Plan 5x per week -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
-              <h3 class="card-title fw-bold text-success">5x por Semana</h3>
-              <p class="card-text text-muted fs-5">R$270 por mês</p>
-              <p class="text-muted">
-                Treinos personalizados com acompanhamento exclusivo.
-              </p>
-              <p class="text-muted">Horários limitados a 6 pessoas por aula.</p>
-              <a href="https://api.whatsapp.com/send/?phone=553484220483&text=5x+por+Semana+R%24270+por+m%C3%AAs++Treinos+personalizados+com+acompanhamento+exclusivo.++Hor%C3%A1rios+limitados+a+6+pessoas+por+aula.&type=phone_number&app_absent=0" class="btn btn-success btn-lg mt-3">
-                Quero Esse Plano
+        <!-- Plano 5x -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-3">
+            <div class="card-body">
+              <h3 class="card-title">5x por Semana</h3>
+              <h4 class="fw-bold">R$270/mês</h4>
+              <p class="card-text">Treinos personalizados e exclusivos.</p>
+              <p class="card-text">Máximo 6 alunos por turma.</p>
+              <a href="https://api.whatsapp.com/send/?phone=553484220483&text=Quero+o+plano+5x+por+semana" class="btn btn-success mt-3">
+                Quero Este Plano
               </a>
             </div>
           </div>
@@ -105,15 +97,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
+  <footer>
     <div class="container text-center">
-      <p class="mb-0">&copy; 2025 - UMOV Studio. Todos os direitos reservados.</p>
+      <p>&copy; 2025 UMOV Studio. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,195 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Bruna Mohallem</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="assets/css/bruna.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professora Bruna Dantas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9fafb;
+        }
+        .btn-primary-custom {
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 25px;
+            padding: 12px 24px;
+        }
+        .btn-primary-custom:hover {
+            background-color: #2E7D32;
+            transform: scale(1.05);
+        }
+        .text-highlight {
+            color: #4CAF50;
+        }
+        .bg-highlight {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 25px;
+        }
+        .bg-highlight:hover {
+            background-color: #2E7D32;
+        }
+        .rounded-section {
+            border-radius: 25px;
+        }
+        .shadow-lg {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-
-<body>
-  <header class="hero-section text-white d-flex align-items-center">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold animate-title">Dra. Bruna Mohallem</h1>
-      <p class="lead animate-description">
-        Clínica Geral 🦷 | Harmonização Orofacial 👄 | Gerenciamento de Pele
-      </p>
-      <a href="https://wa.me/+5535933005253" class="btn btn-lg btn-gold fw-bold mt-3 animate-button">
-        Agende sua Consulta
-      </a>
-    </div>
-  </header>
-
-  <section class="about-section py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4 section-title">Sobre a Dra. Bruna Mohallem</h2>
-      <p class="about-description">
-        Especialista em Dentística e Harmonização Orofacial, Dra. Bruna Mohallem oferece tratamentos personalizados
-        para cuidar do seu sorriso e da sua pele. Com atendimento humanizado e técnicas modernas, ela está pronta para
-        transformar sua autoestima.
-      </p>
-      <div class="row mt-5">
-        <div class="col-md-4">
-          <div class="about-card">
-            <i class="bi bi-heart-fill fs-1 mb-3"></i>
-            <h5 class="fw-bold">Clínica Geral</h5>
-            <p>Cuidado completo para a saúde bucal.</p>
-          </div>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Hero Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row items-center py-10 px-4">
+            <div class="md:w-1/2 text-center md:text-left animate__animated animate__fadeInLeft">
+                <h1 class="text-4xl font-bold text-highlight mb-4">🌟 Aprenda Inglês com quem entende de educação e acolhimento!</h1>
+                <p class="text-lg mb-4">Aulas personalizadas com a Profª Bruna Dantas</p>
+                <p class="text-md mb-4">🎓 Formada em Letras | Pós em Educação Inclusiva | Fluente em Inglês</p>
+                <p class="text-lg font-bold mb-4">📲 Agende sua aula: <a href="https://wa.me/5511970619569" target="_blank" class="text-highlight hover:underline">(11) 97061-9569</a></p>
+                <p class="text-lg font-bold">📸 Instagram: <a href="https://www.instagram.com/brunadantas044" target="_blank" class="text-highlight hover:underline">@brunadantas044</a></p>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate__animated animate__fadeInRight">
+                <img src="assets/img/hero_bruna.png" alt="Professora Bruna Dantas" class="rounded-lg shadow-lg w-3/4 md:w-full">
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="about-card">
-            <i class="bi bi-brush-fill fs-1 mb-3"></i>
-            <h5 class="fw-bold">Harmonização Orofacial</h5>
-            <p>Realce sua beleza com técnicas avançadas.</p>
-          </div>
+    </header>
+
+    <!-- Teste de Nível Button -->
+    <section class="container mx-auto my-6 text-center">
+        <a href="game.html" class="btn-primary-custom shadow-lg text-lg">🎯 Faça o Teste de Nível</a>
+    </section>
+
+    <!-- Sobre a Bruna -->
+    <section class="container mx-auto my-10 px-4">
+        <div class="bg-white shadow-lg rounded-section p-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4"><i class="fas fa-user"></i> Quem é Bruna Dantas?</h2>
+            <p>Sou professora de inglês desde 2021, formada em Letras e atualmente me especializando em Educação Inclusiva. Atuei em escolas com sistema bilíngue e também com projetos voltados para o desenvolvimento infantil como Baby Nurse e Super Teacher Kids.</p>
+            <p class="mt-4">Tenho paixão por ensinar e acredito que cada aluno tem seu ritmo e seu brilho — minha missão é ajudar você a se comunicar com o mundo!</p>
+            <blockquote class="mt-4 text-green-600 font-bold">💡 "Ensinar inglês é mais do que traduzir palavras, é abrir portas."</blockquote>
         </div>
-        <div class="col-md-4">
-          <div class="about-card">
-            <i class="bi bi-person-fill fs-1 mb-3"></i>
-            <h5 class="fw-bold">Gerenciamento de Pele</h5>
-            <p>Protocolos exclusivos para uma pele saudável.</p>
-          </div>
+    </section>
+
+    <!-- Importância do Inglês para Crianças -->
+    <section class="container mx-auto my-10 px-4">
+        <div class="bg-gray-100 shadow-lg rounded-section p-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4"><i class="fas fa-child"></i> Por que o inglês é importante para crianças?</h2>
+            <p class="text-gray-700">Aprender inglês desde cedo ajuda as crianças a desenvolverem habilidades cognitivas, como memória e concentração, além de abrir portas para oportunidades futuras. O inglês é a língua universal, e dominá-lo desde a infância facilita o aprendizado de outras disciplinas e promove a confiança para se comunicar globalmente.</p>
+            <p class="text-gray-700 mt-4">Com aulas lúdicas e interativas, as crianças aprendem de forma natural e divertida, tornando o processo de aprendizado uma experiência positiva e enriquecedora.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="gallery-section py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4 section-title">Antes e Depois</h2>
-      <p class="gallery-description">
-        Transformações impressionantes realizadas pela Dra. Bruna Mohallem.
-      </p>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>📍 Base em São Paulo | 💼 Aulas presenciais ou online | 💬 Fale comigo no WhatsApp</p>
+    </footer>
 
-      <div class="before-after-gallery">
-        <div class="before-after-item">
-          <div class="before-image">
-            <img src="assets/img/before1.jpg" alt="Antes 1">
-            <p class="image-label">Antes</p>
-          </div>
-          <div class="after-image">
-            <img src="assets/img/after1.jpg" alt="Depois 1">
-            <p class="image-label">Depois</p>
-          </div>
-          <input type="range" min="0" max="100" value="50" class="slider" data-before="before1.jpg"
-            data-after="after1.jpg">
-        </div>
-
-        <div class="before-after-item">
-          <div class="before-image">
-            <img src="assets/img/before2.jpg" alt="Antes 2">
-            <p class="image-label">Antes</p>
-          </div>
-          <div class="after-image">
-            <img src="assets/img/after2.jpg" alt="Depois 2">
-            <p class="image-label">Depois</p>
-          </div>
-          <input type="range" min="0" max="100" value="50" class="slider" data-before="before2.jpg"
-            data-after="after2.jpg">
-        </div>
-
-        </div>
-
-    </div>
-  </section>
-
-  <section class="video-section py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4 section-title">Vídeos Explicativos</h2>
-      <p class="video-description">
-        Veja vídeos informativos sobre nossos procedimentos e cuidados.
-      </p>
-
-      <div class="video-grid">
-        <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-          <h5 class="video-title">Clareamento Dental</h5>
-        </div>
-        <div class="video-item">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-          <h5 class="video-title">Harmonização Facial</h5>
-        </div>
-        </div>
-
-    </div>
-  </section>
-
-  <section class="appointment-section py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4 section-title">Agende sua Consulta</h2>
-      <p class="appointment-description">
-        Marque seu horário online de forma rápida e prática.
-      </p>
-
-      <div class="appointment-form">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Telefone</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Digite seu telefone">
-          </div>
-          <div class="mb-3">
-            <label for="procedure" class="form-label">Procedimento Desejado</label>
-            <select class="form-select" id="procedure">
-              <option selected>Selecione um procedimento</option>
-              <option value="clareamento">Clareamento Dental</option>
-              <option value="harmonizacao">Harmonização Facial</option>
-              </select>
-          </div>
-          <div class="mb-3">
-            <label for="date" class="form-label">Data e Hora</label>
-            <input type="datetime-local" class="form-control" id="date">
-          </div>
-          <button type="submit" class="btn btn-gold">Agendar Consulta</button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact-section py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4 section-title">Entre em Contato</h2>
-      <p class="contact-description">
-        Agende sua consulta ou tire suas dúvidas. Estamos prontos para atender você!
-      </p>
-      <div class="row justify-content-center mt-4">
-        <div class="col-md-6">
-          <p class="contact-info">
-            <i class="bi bi-geo-alt-fill"></i> Av. Amazonas 11 // Av. Moda 2674, Passos, Minas Gerais 37900238
-          </p>
-          <a href="https://wa.me/+5535933005253" class="btn btn-gold btn-lg d-block mb-3">
-            <i class="bi bi-whatsapp"></i> Fale Conosco no WhatsApp
-          </a>
-          <a href="https://www.instagram.com/drabrunamohallem/" class="btn btn-outline-gold btn-lg d-block">
-            <i class="bi bi-instagram"></i> Siga-nos no Instagram
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-black text-gold py-4">
-    <div class="container text-center">
-      <p class="mb-0">&copy; 2025 - Dra. Bruna Mohallem. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/bruna.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
