@@ -226,9 +226,16 @@
       const whatsappMessage = `Olá, Profª Bruna! Meu resultado no teste de nível foi: ${levelText}`;
       const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      // Exibe o botão de WhatsApp
+      // Exibe os botões de WhatsApp e Voltar ao site
       const returnButton = document.getElementById('return-button');
-      returnButton.innerHTML = `<a href="${whatsappLink}" target="_blank"><button class="return-btn">📲 Enviar Resultado no WhatsApp</button></a>`;
+      returnButton.innerHTML = `
+        <a href="${whatsappLink}" target="_blank">
+          <button class="return-btn">📲 Enviar Resultado no WhatsApp</button>
+        </a>
+        <a href="bruna.html">
+          <button class="return-btn">🔙 Voltar ao Site</button>
+        </a>
+      `;
       returnButton.style.display = 'block';
 
       localStorage.setItem('finalResult', levelText);
