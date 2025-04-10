@@ -1,0 +1,56 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Fundo claro */
+}
+
+header {
+  background: url('../img/image.png') no-repeat center center; /* Caminho para a logo */
+  background-size: contain; /* Ajusta o tamanho da logo */
+  height: 200px; /* Altura do cabeçalho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+header h1, header .lead {
+  display: none; /* Oculta o texto do cabeçalho */
+}
+
+footer {
+  background-color: #8B0000; /* Vermelho escuro */
+}
+
+h1, .lead {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#menu .accordion-item {
+  border: 1px solid #006400; /* Verde */
+}
+
+#menu .accordion-header {
+  background-color: #ffcc00; /* Amarelo */
+  color: #000;
+}
+
+#menu .accordion-body {
+  background-color: #f8f9fa; /* Fundo claro */
+  color: #333;
+}
+
+.accordion-button {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: #ff7e5f;
+}
+
+.accordion-body {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}

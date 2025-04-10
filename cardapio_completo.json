@@ -1,0 +1,430 @@
+{
+    "Drinks": [
+        {
+            "nome": "Gin Tônica",
+            "preco": 29.9
+        },
+        {
+            "nome": "Aperol Spritz",
+            "preco": 29.9
+        },
+        {
+            "nome": "Negroni",
+            "preco": 24.9
+        },
+        {
+            "nome": "Caipirinha",
+            "preco": 21.9
+        },
+        {
+            "nome": "Caipvodka",
+            "preco": 23.9
+        },
+        {
+            "nome": "Caipvodka Absolut",
+            "preco": 29.9
+        },
+        {
+            "nome": "Caipi Portuga",
+            "preco": 29.9
+        },
+        {
+            "nome": "Passion Lime",
+            "preco": 24.9
+        },
+        {
+            "nome": "Céu Azul",
+            "preco": 29.9
+        },
+        {
+            "nome": "Aloha",
+            "preco": 24.9
+        },
+        {
+            "nome": "Sex on the Beach",
+            "preco": 34.9
+        },
+        {
+            "nome": "Macunaíma",
+            "preco": 21.9
+        },
+        {
+            "nome": "Soda Kids (sem álcool)",
+            "preco": 19.9
+        },
+        {
+            "nome": "Maracujá Kids (sem álcool)",
+            "preco": 24.9
+        }
+    ],
+    "Petiscos e Entradas": [
+        {
+            "nome": "Bolinho de Bacalhau Individual",
+            "preco": 29.9
+        },
+        {
+            "nome": "Bolinho de Bacalhau Porção",
+            "preco": 84.9
+        },
+        {
+            "nome": "Empada de Bacalhau",
+            "preco": 9.9
+        },
+        {
+            "nome": "Casquinha de Bacalhau",
+            "preco": 24.9
+        },
+        {
+            "nome": "Punheta de Bacalhau",
+            "preco": 74.9
+        },
+        {
+            "nome": "Panelinha de Bacalhau",
+            "preco": 89.9
+        },
+        {
+            "nome": "Bruschetta de Bacalhau",
+            "preco": 49.9
+        },
+        {
+            "nome": "Ceviche de Tilápia",
+            "preco": 54.9
+        },
+        {
+            "nome": "Ceviche de Salmão",
+            "preco": 79.9
+        },
+        {
+            "nome": "Ceviche Misto",
+            "preco": 64.9
+        },
+        {
+            "nome": "Frios (500g)",
+            "preco": 89.9
+        },
+        {
+            "nome": "Anéis de Lula à Dorê",
+            "preco": 99.9
+        },
+        {
+            "nome": "Filé com Fritas",
+            "preco": 139.9
+        },
+        {
+            "nome": "Fritas",
+            "preco": 39.9
+        },
+        {
+            "nome": "Fritas com Queijo e Bacon",
+            "preco": 49.9
+        },
+        {
+            "nome": "Bolinho de Arroz",
+            "preco": 39.9
+        },
+        {
+            "nome": "Mini Quibe",
+            "preco": 39.9
+        },
+        {
+            "nome": "Mix de Bolinhos",
+            "preco": 69.9
+        },
+        {
+            "nome": "Batata Rústica",
+            "preco": 39.9
+        },
+        {
+            "nome": "Costela de Tambaqui Empanada",
+            "preco": 69.9
+        },
+        {
+            "nome": "Isca de Peixe",
+            "preco": 84.9
+        },
+        {
+            "nome": "Isca de Frango",
+            "preco": 64.9
+        },
+        {
+            "nome": "Camarão Empanado",
+            "preco": 169.9
+        },
+        {
+            "nome": "Camarão Alho e Óleo",
+            "preco": 169.9
+        },
+        {
+            "nome": "Salada de Bacalhau",
+            "preco": 99.9
+        },
+        {
+            "nome": "Adicione Palmito ou Grão de Bico",
+            "preco": 14.9
+        },
+        {
+            "nome": "Salada Tradicional",
+            "preco": 39.9
+        },
+        {
+            "nome": "Salada Especial",
+            "preco": 59.9
+        },
+        {
+            "nome": "Playground Taskids",
+            "preco": 15.0
+        }
+    ],
+    "Bacalhau (Lascas)": [
+        {
+            "nome": "Bacalhoada à Portuguesa (Meia)",
+            "preco": 154.9
+        },
+        {
+            "nome": "Bacalhoada à Portuguesa (Inteira)",
+            "preco": 239.9
+        },
+        {
+            "nome": "Bacalhau à Braz (Meia)",
+            "preco": 149.9
+        },
+        {
+            "nome": "Bacalhau à Braz (Inteira)",
+            "preco": 229.9
+        },
+        {
+            "nome": "Bacalhau à Gomes de Sá (Meia)",
+            "preco": 149.9
+        },
+        {
+            "nome": "Bacalhau à Gomes de Sá (Inteira)",
+            "preco": 229.9
+        },
+        {
+            "nome": "Bacalhau Húngaro (Meia)",
+            "preco": 149.9
+        },
+        {
+            "nome": "Bacalhau Húngaro (Inteira)",
+            "preco": 229.9
+        },
+        {
+            "nome": "Bacalhau ao Molho Branco (Meia)",
+            "preco": 149.9
+        },
+        {
+            "nome": "Bacalhau ao Molho Branco (Inteira)",
+            "preco": 229.9
+        },
+        {
+            "nome": "Escondidinho de Bacalhau (Meia)",
+            "preco": 129.9
+        },
+        {
+            "nome": "Escondidinho de Bacalhau (Inteira)",
+            "preco": 199.9
+        }
+    ],
+    "Bacalhau (Lombo)": [
+        {
+            "nome": "Bacalhau do Rei (Inteira)",
+            "preco": 334.9
+        },
+        {
+            "nome": "Bacalhau ao Forno (Meia)",
+            "preco": 199.9
+        },
+        {
+            "nome": "Bacalhau ao Forno (Inteira)",
+            "preco": 334.9
+        },
+        {
+            "nome": "Bacalhau à Lagareiro (Meia)",
+            "preco": 199.9
+        },
+        {
+            "nome": "Bacalhau à Lagareiro (Inteira)",
+            "preco": 334.9
+        },
+        {
+            "nome": "Bacalhau da Chef (Estimado)",
+            "preco": 199.9
+        },
+        {
+            "nome": "Bacalhau dos Alves (Meia)",
+            "preco": 184.9
+        },
+        {
+            "nome": "Bacalhau dos Alves (Inteira)",
+            "preco": 324.9
+        },
+        {
+            "nome": "Bacalhau à Salomão (Meia)",
+            "preco": 199.9
+        },
+        {
+            "nome": "Bacalhau à Salomão (Inteira)",
+            "preco": 334.9
+        },
+        {
+            "nome": "Bacalhau à Belle Meunière (Inteira)",
+            "preco": 349.9
+        },
+        {
+            "nome": "Bacalhoada à Portuguesa com Lombo (Meia)",
+            "preco": 204.9
+        },
+        {
+            "nome": "Bacalhoada à Portuguesa com Lombo (Inteira)",
+            "preco": 339.9
+        }
+    ],
+    "Tilápia": [
+        {
+            "nome": "Tilápia da Casa (Meia)",
+            "preco": 89.9
+        },
+        {
+            "nome": "Tilápia da Casa (Inteira)",
+            "preco": 149.9
+        },
+        {
+            "nome": "Tilápia com Camarões (Meia)",
+            "preco": 94.9
+        },
+        {
+            "nome": "Tilápia com Camarões (Inteira)",
+            "preco": 159.9
+        },
+        {
+            "nome": "Tilápia à Belle Meunière (Inteira)",
+            "preco": 194.9
+        },
+        {
+            "nome": "Tilápia à Dorê",
+            "preco": 99.9
+        },
+        {
+            "nome": "Tilápia à Parmegiana (Meia)",
+            "preco": 94.9
+        },
+        {
+            "nome": "Tilápia à Parmegiana (Inteira)",
+            "preco": 149.9
+        }
+    ],
+    "Salmão": [
+        {
+            "nome": "Salmão com Risoto (Inteira)",
+            "preco": 199.9
+        },
+        {
+            "nome": "Salmão à Belle Meunière (Meia)",
+            "preco": 144.9
+        },
+        {
+            "nome": "Salmão à Belle Meunière (Inteira)",
+            "preco": 249.9
+        }
+    ],
+    "Filé": [
+        {
+            "nome": "Filé Mignon à Parmegiana (Meia)",
+            "preco": 109.9
+        },
+        {
+            "nome": "Filé Mignon à Parmegiana (Inteira)",
+            "preco": 179.9
+        },
+        {
+            "nome": "Filé Mignon ao Molho Madeira (Meia)",
+            "preco": 109.9
+        },
+        {
+            "nome": "Filé Mignon ao Molho Madeira (Inteira)",
+            "preco": 179.9
+        },
+        {
+            "nome": "Filé Oswaldo Aranha (Meia)",
+            "preco": 99.9
+        },
+        {
+            "nome": "Filé Oswaldo Aranha (Inteira)",
+            "preco": 174.9
+        },
+        {
+            "nome": "Filé à Cavalo (Meia)",
+            "preco": 89.9
+        },
+        {
+            "nome": "Filé à Cavalo (Inteira)",
+            "preco": 149.9
+        }
+    ],
+    "Camarão": [
+        {
+            "nome": "Camarão à Húngara (Meia)",
+            "preco": 139.9
+        },
+        {
+            "nome": "Camarão à Húngara (Inteira)",
+            "preco": 219.9
+        },
+        {
+            "nome": "Camarão ao Molho Branco (Meia)",
+            "preco": 139.9
+        },
+        {
+            "nome": "Camarão ao Molho Branco (Inteira)",
+            "preco": 219.9
+        },
+        {
+            "nome": "Camarão à Grega (Meia)",
+            "preco": 139.9
+        },
+        {
+            "nome": "Camarão à Grega (Inteira)",
+            "preco": 219.9
+        }
+    ],
+    "Kids": [
+        {
+            "nome": "Filezinho",
+            "preco": 44.9
+        },
+        {
+            "nome": "Peixinho",
+            "preco": 39.9
+        }
+    ],
+    "Sobremesas": [
+        {
+            "nome": "Pastelzinho de Belém",
+            "preco": 14.9
+        },
+        {
+            "nome": "Petit Gateau (com sorvete)",
+            "preco": 34.9
+        },
+        {
+            "nome": "Sorvete (2 bolas)",
+            "preco": 16.9
+        },
+        {
+            "nome": "Pastelzinho de Belém com 1 bola de sorvete",
+            "preco": 22.9
+        },
+        {
+            "nome": "Café Espresso",
+            "preco": 7.9
+        },
+        {
+            "nome": "Vinho do Porto (Cálice 35ml)",
+            "preco": 19.9
+        },
+        {
+            "nome": "Licor de Café Tia Maria (Cálice 35ml)",
+            "preco": 19.9
+        }
+    ]
+}
