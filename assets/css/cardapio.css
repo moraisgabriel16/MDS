@@ -4,14 +4,15 @@ body {
 }
 
 header {
-  background: url('../img/image.png') no-repeat center center; /* Caminho para a logo */
-  background-size: contain; /* Ajusta o tamanho da logo */
-  height: 200px; /* Altura do cabeçalho */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.7); /* Transparente */
+  transition: background 0.3s ease;
+}
+
+header:hover {
+  background: rgba(0, 0, 0, 1); /* Fundo sólido ao passar o mouse */
 }
 
 header h1, header .lead {
@@ -35,22 +36,54 @@ h1, .lead {
   color: #000;
 }
 
-#menu .accordion-body {
-  background-color: #f8f9fa; /* Fundo claro */
-  color: #333;
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #333;
 }
 
-.accordion-button {
+body.dark-mode .accordion-header {
+  background-color: #555;
+}
+
+body.dark-mode .accordion-body {
+  background-color: #ddd;
+}
+
+.language-buttons {
+  z-index: 1000;
+}
+
+.language-buttons .btn {
+  padding: 5px 10px;
   font-weight: bold;
-  color: #343a40;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.accordion-button:not(.collapsed) {
-  color: #fff;
-  background-color: #ff7e5f;
+.language-buttons .flag-icon {
+  font-size: 24px;
 }
 
-.accordion-body {
-  background-color: #fff;
-  border-top: 1px solid #ddd;
+language-buttons .flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+language-buttons .btn:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+.accordion-button .accordion-icon {
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+  content: "-";
+}
+
+.accordion-collapse {
+  transition: height 0.3s ease;
 }

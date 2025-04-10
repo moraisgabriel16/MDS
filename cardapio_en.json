@@ -1,0 +1,430 @@
+{
+  "Drinks": [
+    {
+      "nome": "Gin & Tonic",
+      "preco": 29.9
+    },
+    {
+      "nome": "Aperol Spritz",
+      "preco": 29.9
+    },
+    {
+      "nome": "Negroni",
+      "preco": 24.9
+    },
+    {
+      "nome": "Caipirinha",
+      "preco": 21.9
+    },
+    {
+      "nome": "Caipvodka",
+      "preco": 23.9
+    },
+    {
+      "nome": "Caipvodka Absolut",
+      "preco": 29.9
+    },
+    {
+      "nome": "Caipi Portuga",
+      "preco": 29.9
+    },
+    {
+      "nome": "Passion Lime",
+      "preco": 24.9
+    },
+    {
+      "nome": "Blue Sky",
+      "preco": 29.9
+    },
+    {
+      "nome": "Aloha",
+      "preco": 24.9
+    },
+    {
+      "nome": "Sex on the Beach",
+      "preco": 34.9
+    },
+    {
+      "nome": "Macunaíma",
+      "preco": 21.9
+    },
+    {
+      "nome": "Soda Kids (non-alcoholic)",
+      "preco": 19.9
+    },
+    {
+      "nome": "Passionfruit Kids (non-alcoholic)",
+      "preco": 24.9
+    }
+  ],
+  "Appetizers & Starters": [
+    {
+      "nome": "Codfish Cake (Individual)",
+      "preco": 29.9
+    },
+    {
+      "nome": "Codfish Cake (Portion)",
+      "preco": 84.9
+    },
+    {
+      "nome": "Codfish Empanada",
+      "preco": 9.9
+    },
+    {
+      "nome": "Codfish Shell",
+      "preco": 24.9
+    },
+    {
+      "nome": "Codfish Salad (Punheta)",
+      "preco": 74.9
+    },
+    {
+      "nome": "Mini Cod Pot",
+      "preco": 89.9
+    },
+    {
+      "nome": "Cod Bruschetta",
+      "preco": 49.9
+    },
+    {
+      "nome": "Tilapia Ceviche",
+      "preco": 54.9
+    },
+    {
+      "nome": "Salmon Ceviche",
+      "preco": 79.9
+    },
+    {
+      "nome": "Mixed Ceviche",
+      "preco": 64.9
+    },
+    {
+      "nome": "Cold Cuts (500g)",
+      "preco": 89.9
+    },
+    {
+      "nome": "Fried Squid Rings",
+      "preco": 99.9
+    },
+    {
+      "nome": "Steak with Fries",
+      "preco": 139.9
+    },
+    {
+      "nome": "French Fries",
+      "preco": 39.9
+    },
+    {
+      "nome": "Fries with Cheese & Bacon",
+      "preco": 49.9
+    },
+    {
+      "nome": "Rice Balls",
+      "preco": 39.9
+    },
+    {
+      "nome": "Mini Kibbeh",
+      "preco": 39.9
+    },
+    {
+      "nome": "Mixed Fried Balls",
+      "preco": 69.9
+    },
+    {
+      "nome": "Rustic Potatoes",
+      "preco": 39.9
+    },
+    {
+      "nome": "Breaded Tambaqui Ribs",
+      "preco": 69.9
+    },
+    {
+      "nome": "Fish Bites",
+      "preco": 84.9
+    },
+    {
+      "nome": "Chicken Bites",
+      "preco": 64.9
+    },
+    {
+      "nome": "Breaded Shrimp",
+      "preco": 169.9
+    },
+    {
+      "nome": "Garlic Shrimp",
+      "preco": 169.9
+    },
+    {
+      "nome": "Codfish Salad",
+      "preco": 99.9
+    },
+    {
+      "nome": "Add Palm Heart or Chickpeas",
+      "preco": 14.9
+    },
+    {
+      "nome": "Traditional Salad",
+      "preco": 39.9
+    },
+    {
+      "nome": "Special Salad",
+      "preco": 59.9
+    },
+    {
+      "nome": "Taskids Playground",
+      "preco": 15.0
+    }
+  ],
+  "Cod (Flakes)": [
+    {
+      "nome": "Bacalhoada à Portuguesa (Meia)",
+      "preco": 154.9
+    },
+    {
+      "nome": "Bacalhoada à Portuguesa (Inteira)",
+      "preco": 239.9
+    },
+    {
+      "nome": "Bacalhau à Braz (Meia)",
+      "preco": 149.9
+    },
+    {
+      "nome": "Bacalhau à Braz (Inteira)",
+      "preco": 229.9
+    },
+    {
+      "nome": "Bacalhau à Gomes de Sá (Meia)",
+      "preco": 149.9
+    },
+    {
+      "nome": "Bacalhau à Gomes de Sá (Inteira)",
+      "preco": 229.9
+    },
+    {
+      "nome": "Bacalhau Húngaro (Meia)",
+      "preco": 149.9
+    },
+    {
+      "nome": "Bacalhau Húngaro (Inteira)",
+      "preco": 229.9
+    },
+    {
+      "nome": "Bacalhau ao Molho Branco (Meia)",
+      "preco": 149.9
+    },
+    {
+      "nome": "Bacalhau ao Molho Branco (Inteira)",
+      "preco": 229.9
+    },
+    {
+      "nome": "Escondidinho de Bacalhau (Meia)",
+      "preco": 129.9
+    },
+    {
+      "nome": "Escondidinho de Bacalhau (Inteira)",
+      "preco": 199.9
+    }
+  ],
+  "Cod (Loin)": [
+    {
+      "nome": "Bacalhau do Rei (Inteira)",
+      "preco": 334.9
+    },
+    {
+      "nome": "Bacalhau ao Forno (Meia)",
+      "preco": 199.9
+    },
+    {
+      "nome": "Bacalhau ao Forno (Inteira)",
+      "preco": 334.9
+    },
+    {
+      "nome": "Bacalhau à Lagareiro (Meia)",
+      "preco": 199.9
+    },
+    {
+      "nome": "Bacalhau à Lagareiro (Inteira)",
+      "preco": 334.9
+    },
+    {
+      "nome": "Bacalhau da Chef (Estimado)",
+      "preco": 199.9
+    },
+    {
+      "nome": "Bacalhau dos Alves (Meia)",
+      "preco": 184.9
+    },
+    {
+      "nome": "Bacalhau dos Alves (Inteira)",
+      "preco": 324.9
+    },
+    {
+      "nome": "Bacalhau à Salomão (Meia)",
+      "preco": 199.9
+    },
+    {
+      "nome": "Bacalhau à Salomão (Inteira)",
+      "preco": 334.9
+    },
+    {
+      "nome": "Bacalhau à Belle Meunière (Inteira)",
+      "preco": 349.9
+    },
+    {
+      "nome": "Bacalhoada à Portuguesa com Lombo (Meia)",
+      "preco": 204.9
+    },
+    {
+      "nome": "Bacalhoada à Portuguesa com Lombo (Inteira)",
+      "preco": 339.9
+    }
+  ],
+  "Tilapia": [
+    {
+      "nome": "Tilápia da Casa (Meia)",
+      "preco": 89.9
+    },
+    {
+      "nome": "Tilápia da Casa (Inteira)",
+      "preco": 149.9
+    },
+    {
+      "nome": "Tilápia com Camarões (Meia)",
+      "preco": 94.9
+    },
+    {
+      "nome": "Tilápia com Camarões (Inteira)",
+      "preco": 159.9
+    },
+    {
+      "nome": "Tilápia à Belle Meunière (Inteira)",
+      "preco": 194.9
+    },
+    {
+      "nome": "Tilápia à Dorê",
+      "preco": 99.9
+    },
+    {
+      "nome": "Tilápia à Parmegiana (Meia)",
+      "preco": 94.9
+    },
+    {
+      "nome": "Tilápia à Parmegiana (Inteira)",
+      "preco": 149.9
+    }
+  ],
+  "Salmon": [
+    {
+      "nome": "Salmão com Risoto (Inteira)",
+      "preco": 199.9
+    },
+    {
+      "nome": "Salmão à Belle Meunière (Meia)",
+      "preco": 144.9
+    },
+    {
+      "nome": "Salmão à Belle Meunière (Inteira)",
+      "preco": 249.9
+    }
+  ],
+  "Filet Mignon": [
+    {
+      "nome": "Filé Mignon à Parmegiana (Meia)",
+      "preco": 109.9
+    },
+    {
+      "nome": "Filé Mignon à Parmegiana (Inteira)",
+      "preco": 179.9
+    },
+    {
+      "nome": "Filé Mignon ao Molho Madeira (Meia)",
+      "preco": 109.9
+    },
+    {
+      "nome": "Filé Mignon ao Molho Madeira (Inteira)",
+      "preco": 179.9
+    },
+    {
+      "nome": "Filé Oswaldo Aranha (Meia)",
+      "preco": 99.9
+    },
+    {
+      "nome": "Filé Oswaldo Aranha (Inteira)",
+      "preco": 174.9
+    },
+    {
+      "nome": "Filé à Cavalo (Meia)",
+      "preco": 89.9
+    },
+    {
+      "nome": "Filé à Cavalo (Inteira)",
+      "preco": 149.9
+    }
+  ],
+  "Shrimp": [
+    {
+      "nome": "Camarão à Húngara (Meia)",
+      "preco": 139.9
+    },
+    {
+      "nome": "Camarão à Húngara (Inteira)",
+      "preco": 219.9
+    },
+    {
+      "nome": "Camarão ao Molho Branco (Meia)",
+      "preco": 139.9
+    },
+    {
+      "nome": "Camarão ao Molho Branco (Inteira)",
+      "preco": 219.9
+    },
+    {
+      "nome": "Camarão à Grega (Meia)",
+      "preco": 139.9
+    },
+    {
+      "nome": "Camarão à Grega (Inteira)",
+      "preco": 219.9
+    }
+  ],
+  "Kids": [
+    {
+      "nome": "Filezinho",
+      "preco": 44.9
+    },
+    {
+      "nome": "Peixinho",
+      "preco": 39.9
+    }
+  ],
+  "Desserts": [
+    {
+      "nome": "Pastel de Belém",
+      "preco": 14.9
+    },
+    {
+      "nome": "Petit Gateau (with ice cream)",
+      "preco": 34.9
+    },
+    {
+      "nome": "Ice Cream (2 scoops)",
+      "preco": 16.9
+    },
+    {
+      "nome": "Pastel de Belém with 1 scoop of ice cream",
+      "preco": 22.9
+    },
+    {
+      "nome": "Espresso Coffee",
+      "preco": 7.9
+    },
+    {
+      "nome": "Port Wine (35ml glass)",
+      "preco": 19.9
+    },
+    {
+      "nome": "Tia Maria Coffee Liqueur (35ml glass)",
+      "preco": 19.9
+    }
+  ]
+}
