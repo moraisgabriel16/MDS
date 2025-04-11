@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil de Brésilienne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-RLmBz43R/BMEf35tdmnmk4Tw/5tDYF1s6iUPeUDByYtxTjZ2D5O+3KNZgqR1e8e0ISa5U8M4d8V1Iydc7aSC8A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: #121212;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1.9em;
+      color: #ff69b4;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      font-size: 1.05em;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #ff69b4;
+      font-weight: bold;
+    }
+
+    .tarifs {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .tarifs h2 {
+      color: #ff69b4;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .tarifs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tarifs ul li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #444;
+      padding: 6px 0;
+      font-size: 1em;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 1em;
+    }
+
+    .footer a {
+      display: inline-block;
+      margin: 10px 5px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #ff69b4;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .footer a:hover {
+      background-color: #e55a9e;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      height: 180px;
+    }
+
+    @media (max-width: 500px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .gallery img {
+        height: auto;
+      }
+    }
+
+    .language-switcher {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .language-switcher button {
+      background: none;
+      border: none;
+      color: #ff69b4;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .language-switcher button:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="language-switcher">
+      <button onclick="setLang('fr')">🇫🇷 FR</button> |
+      <button onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+
+    <h1>Salut ça va? 😘</h1>
+    <p class="intro" id="bio">
+      J'aime bien les clients gentils 💋<br><br>
+      • Je suis <span class="highlight">brésilienne</span>, je parle <span class="highlight">français</span>, je suis très <span class="highlight">chaud</span>, très <span class="highlight">propre</span>,<br>
+      je fais <span class="highlight">toutes les positions</span>,<br>
+      <span class="highlight">pipe gorge profonde</span> (avec préservatif uniquement),<br>
+      <span class="highlight">massage tantrique</span> et relaxant sur le corps,<br>
+      <span class="highlight">footjob</span>, <span class="highlight">domination</span> et autres <span class="highlight">fétiches</span> 🥰
+    </p>
+
+    <div class="tarifs">
+      <h2 id="title-tarif">Mes tarifs:</h2>
+      <ul>
+        <li><span><i class="fa-solid fa-seedling"></i> 10 min</span><span>60€</span></li>
+        <li><span><i class="fa-solid fa-seedling"></i> 20 min</span><span>80€</span></li>
+        <li><span><i class="fa-solid fa-seedling"></i> 30 min</span><span>120€</span></li>
+        <li><span><i class="fa-solid fa-seedling"></i> 40 min</span><span>150€</span></li>
+        <li><span><i class="fa-solid fa-seedling"></i> 1 heure</span><span>200€</span></li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="../DevFolio-master/assets/img/nicole/nic1.jpg" alt="Nicole 1">
+      <img src="../DevFolio-master/assets/img/nicole/nic2.jpg" alt="Nicole 2">
+      <img src="../DevFolio-master/assets/img/nicole/nic3.jpg" alt="Nicole 3">
+      <img src="../DevFolio-master/assets/img/nicole/nic4.jpg" alt="Nicole 4">
+    </div>
+
+    <div class="footer">
+      <a href="https://wa.me/33773045846?text=Vim%20pelo%20site%20%2C%20gostaria%20de%20connaître%20plus" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://www.snapchat.com/add/lopes7nicole" target="_blank">
+        <i class="fab fa-snapchat-ghost"></i> Snapchat
+      </a>
+      <p style="margin-top: 15px;"><i class="fa-solid fa-location-dot"></i> Avignon - apto avec <span class="highlight">parking gratuit</span></p>
+    </div>
+  </div>
+
+  <script>
+    const content = {
+      fr: {
+        bio: `J'aime bien les clients gentils 💋<br><br>
+        • Je suis <span class="highlight">brésilienne</span>, je parle <span class="highlight">français</span>, je suis très <span class="highlight">chaud</span>, très <span class="highlight">propre</span>,<br>
+        je fais <span class="highlight">toutes les positions</span>,<br>
+        <span class="highlight">pipe gorge profonde</span> (avec préservatif uniquement),<br>
+        <span class="highlight">massage tantrique</span> et relaxant sur le corps,<br>
+        <span class="highlight">footjob</span>, <span class="highlight">domination</span> et autres <span class="highlight">fétiches</span> 🥰`,
+        tarifs: 'Mes tarifs:'
+      },
+      en: {
+        bio: `I love kind clients 💋<br><br>
+        • I'm <span class="highlight">Brazilian</span>, I speak <span class="highlight">French</span>, I'm very <span class="highlight">hot</span> and <span class="highlight">clean</span>,<br>
+        I do <span class="highlight">all positions</span>,<br>
+        <span class="highlight">deep throat BJ</span> (with condom only),<br>
+        <span class="highlight">tantric</span> and relaxing massage,<br>
+        <span class="highlight">footjob</span>, <span class="highlight">domination</span> and other <span class="highlight">fetishes</span> 🥰`,
+        tarifs: 'My rates:'
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('bio').innerHTML = content[lang].bio;
+      document.getElementById('title-tarif').innerText = content[lang].tarifs;
+    }
+  </script>
+
+</body>
+</html>
