@@ -1,0 +1,266 @@
+{
+  "Bolos Decorados": [
+    {
+      "nome": "Baby (10cm) - Tradicional",
+      "preco": 70.0
+    },
+    {
+      "nome": "Baby (10cm) - Especial",
+      "preco": 80.0
+    },
+    {
+      "nome": "PP (13cm) - Tradicional",
+      "preco": 85.0
+    },
+    {
+      "nome": "PP (13cm) - Especial",
+      "preco": 100.0
+    },
+    {
+      "nome": "P (15cm) - Tradicional",
+      "preco": 130.0
+    },
+    {
+      "nome": "P (15cm) - Especial",
+      "preco": 160.0
+    },
+    {
+      "nome": "M (17cm) - Tradicional",
+      "preco": 185.0
+    },
+    {
+      "nome": "M (17cm) - Especial",
+      "preco": 215.0
+    },
+    {
+      "nome": "G (20cm) - Tradicional",
+      "preco": 260.0
+    },
+    {
+      "nome": "G (20cm) - Especial",
+      "preco": 285.0
+    },
+    {
+      "nome": "GG (25cm) - Tradicional",
+      "preco": 350.0
+    },
+    {
+      "nome": "GG (25cm) - Especial",
+      "preco": 380.0
+    }
+  ],
+  "Bentô Cake": [
+    {
+      "nome": "Bentô Cake (300g)",
+      "preco": 60.0
+    }
+  ],
+  "Decorações Extras": [
+    {
+      "nome": "Topo de Bolo Simples",
+      "preco": 30.0
+    },
+    {
+      "nome": "Topo de Bolo 3D",
+      "preco": 35.0
+    },
+    {
+      "nome": "Papel de Arroz",
+      "preco": 15.0
+    },
+    {
+      "nome": "Balloon Cake",
+      "preco": 30.0
+    },
+    {
+      "nome": "Glitter",
+      "preco": 10.0
+    },
+    {
+      "nome": "Morangos (5 unidades)",
+      "preco": 7.0
+    },
+    {
+      "nome": "Brigadeiros (10 unidades)",
+      "preco": 25.0
+    }
+  ],
+  "Kit Festa": [
+    {
+      "nome": "Kit Festa 5 Pessoas",
+      "preco": 220.0
+    },
+    {
+      "nome": "Kit Festa 10 Pessoas",
+      "preco": 390.0
+    },
+    {
+      "nome": "Kit Festa 15 Pessoas",
+      "preco": 570.0
+    },
+    {
+      "nome": "Kit Festa 20 a 30 Pessoas",
+      "preco": 800.0
+    },
+    {
+      "nome": "Kit Festa 40 a 50 Pessoas",
+      "preco": 1350.0
+    }
+  ],
+  "Recheios Disponíveis": [
+    {
+      "nome": "Prestígio"
+    },
+    {
+      "nome": "Brigadeiro de Leite Ninho"
+    },
+    {
+      "nome": "Brigadeiro Branco"
+    },
+    {
+      "nome": "Brigadeiro ao Leite"
+    },
+    {
+      "nome": "Brigadeiro Alpino"
+    },
+    {
+      "nome": "Creme Belga com Abacaxi"
+    },
+    {
+      "nome": "Creme Belga com Morango"
+    },
+    {
+      "nome": "Brigadeiro de Ninho com Abacaxi"
+    },
+    {
+      "nome": "Brigadeiro de Ninho com Morango"
+    },
+    {
+      "nome": "Brigadeiro Sensação"
+    },
+    {
+      "nome": "Brigadeiro de Frutas Vermelhas"
+    },
+    {
+      "nome": "Quatro Leites"
+    },
+    {
+      "nome": "Brigadeiro de Caramelo Salgado"
+    },
+    {
+      "nome": "Brigadeiro de Cream Cheese com Geléia de Morango"
+    },
+    {
+      "nome": "Brigadeiro Ninho com Nutella"
+    },
+    {
+      "nome": "Brigadeiro de Pistache"
+    },
+    {
+      "nome": "Chocobeijinho"
+    },
+    {
+      "nome": "Brigadeiro Branco com Creme de Limão Siciliano"
+    },
+    {
+      "nome": "Doce de Leite com Nozes"
+    },
+    {
+      "nome": "Trufado Cream Cheese com Limão Siciliano"
+    },
+    {
+      "nome": "Maracujá"
+    },
+    {
+      "nome": "Chocolate ao Leite"
+    },
+    {
+      "nome": "Chocolate Meio Amargo"
+    },
+    {
+      "nome": "Chocolate Branco"
+    },
+    {
+      "nome": "Morango"
+    },
+    {
+      "nome": "Sensação"
+    },
+    {
+      "nome": "Limão"
+    },
+    {
+      "nome": "Ninho"
+    },
+    {
+      "nome": "Paçoca"
+    },
+    {
+      "nome": "Chocolate ao Leite com Café"
+    },
+    {
+      "nome": "Chocolate Branco com Café"
+    },
+    {
+      "nome": "Trufado de Paçoquinha"
+    },
+    {
+      "nome": "Cremosa"
+    }
+  ],
+  "Doces Tradicionais": [
+    {
+      "nome": "Brigadeiro ao leite"
+    },
+    {
+      "nome": "Beijinho"
+    },
+    {
+      "nome": "Brigadeiro Branco"
+    },
+    {
+      "nome": "Dois amores"
+    },
+    {
+      "nome": "Ninho"
+    },
+    {
+      "nome": "Moranguinho"
+    },
+    {
+      "nome": "Amendoim"
+    },
+    {
+      "nome": "Café"
+    },
+    {
+      "nome": "Limão"
+    }
+  ],
+  "Salgados": [
+    {
+      "nome": "Coxinha"
+    },
+    {
+      "nome": "Bolinha de queijo"
+    },
+    {
+      "nome": "Croquete de carne"
+    },
+    {
+      "nome": "Rissoles de Presunto e queijo"
+    },
+    {
+      "nome": "Esfiha de carne"
+    },
+    {
+      "nome": "Enroladinho de salsicha"
+    },
+    {
+      "nome": "Empada de Frango"
+    },
+    {
+      "nome": "Empada de palmito"
+    }
+  ]
+}

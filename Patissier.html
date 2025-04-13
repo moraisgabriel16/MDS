@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patissier Bolos e Doces</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icon.min.css">
+  <link rel="stylesheet" href="assets/css/cardapio.css">
+</head>
+<body>
+  <header class="bg-danger text-white text-center py-4 position-relative">
+    <img src="assets/img/logo-patissier.png" alt="Logo Patissier Bolos e Doces" class="logo mb-3">
+    <h1 class="display-4">Patissier Bolos e Doces</h1>
+    <p class="lead">Feito com carinho para adoçar seus momentos!</p>
+    <div class="language-buttons position-absolute top-0 end-0 p-3">
+      <button id="btn-pt" class="btn btn-light mx-1">PT</button>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <input
+      type="text"
+      id="search-bar"
+      class="form-control mb-4"
+      placeholder="Digite para filtrar o cardápio..."
+    />
+
+    <div id="menu" class="accordion"></div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Patissier Bolos e Doces. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script do Cardápio -->
+  <script src="assets/js/Patissier.js"></script>
+</body>
+</html>
