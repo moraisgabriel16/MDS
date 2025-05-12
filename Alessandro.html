@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro - Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Fundo bem escuro e elegante */
+            background: linear-gradient(to bottom, #1a1a1a, #0f0f0f); /* Gradiente de preto a preto mais escuro */
+            color: #e0e0e0; /* Cor do texto padrão clara */
+            display: flex;
+            flex-direction: column; /* Empilha os elementos verticalmente */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            /* Contêiner em tom escuro que contrasta levemente com o fundo */
+            background-color: #282828; /* Cinza escuro */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra mais proeminente e escura */
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px; /* Espaço entre o contêiner e o rodapé */
+            border: 1px solid #333; /* Borda sutil para definição */
+        }
+
+        h1 {
+            color: #ffffff; /* Título branco */
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto mais nítida */
+        }
+
+        .link-button {
+            display: block;
+            width: calc(100% - 40px);
+            margin: 15px auto;
+            padding: 18px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra nos botões mais escura */
+            position: relative; /* Para o pseudo-elemento de brilho */
+            overflow: hidden; /* Para o pseudo-elemento de brilho */
+            z-index: 1; /* Garante que o conteúdo do botão fique acima do pseudo-elemento */
+        }
+
+        /* Efeito de brilho sutil no hover */
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Brilho branco semi-transparente */
+            transition: left 0.4s ease;
+            z-index: 0; /* Fica atrás do conteúdo */
+        }
+
+        .link-button:hover::before {
+            left: 100%; /* Move o brilho para a direita */
+        }
+
+
+        .link-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra no hover mais intensa */
+        }
+
+        /* Estilos específicos para cores de redes sociais */
+        .instagram-button {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+
+        .email-button {
+             background-color: #D44638;
+        }
+
+        .save-contact-button {
+            background-color: #17a2b8; /* Cor que mantém um contraste interessante */
+            margin-top: 30px;
+        }
+
+        /* Estilo para o rodapé */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #b0b0b0; /* Cor cinza clara para o texto do rodapé */
+        }
+
+        .footer a {
+            color: #b0b0b0; /* Cor do link no rodapé */
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #ffffff; /* Cor do link no rodapé ao passar o mouse */
+            text-decoration: underline;
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .link-button {
+                padding: 16px 15px;
+                font-size: 17px;
+            }
+             .footer {
+                 font-size: 12px;
+             }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alessandro</h1>
+
+        <a href="https://www.instagram.com/ale_ahcor/" target="_blank" class="link-button instagram-button">Instagram</a>
+
+        <a href="https://wa.me/5511972296075" target="_blank" class="link-button whatsapp-button">WhatsApp</a>
+
+        <a href="mailto:adrianetodrigues.imoveis@gmail.com" class="link-button email-button">Email</a>
+
+        <a href="alessandro_contato.vcf" download="alessandro_contato.vcf" class="link-button save-contact-button">Salvar Contato</a>
+
+    </div>
+
+    <div class="footer">
+        Criado por <a href="https://www.moraisdigitalsolutions.site/" target="_blank">Morais Digital Solutions</a>
+    </div>
+
+</body>
+</html>
