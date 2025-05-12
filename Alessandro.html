@@ -7,14 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            /* Fundo bem escuro e elegante */
-            background: linear-gradient(to bottom, #1a1a1a, #0f0f0f); /* Gradiente de preto a preto mais escuro */
-            color: #e0e0e0; /* Cor do texto padrão clara */
+            background: linear-gradient(to bottom, #121212, #0a0a0a); /* Fundo ainda mais escuro */
+            color: #e0e0e0;
             display: flex;
-            flex-direction: column; /* Empilha os elementos verticalmente */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -25,25 +26,38 @@
 
         .container {
             text-align: center;
-            /* Contêiner em tom escuro que contrasta levemente com o fundo */
-            background-color: #282828; /* Cinza escuro */
+            background-color: #1e1e1e; /* Cinza bem escuro para o container */
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra mais proeminente e escura */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra mais intensa */
             max-width: 450px;
             width: 100%;
             position: relative;
             overflow: hidden;
-            margin-bottom: 30px; /* Espaço entre o contêiner e o rodapé */
-            border: 1px solid #333; /* Borda sutil para definição */
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        /* Estilo para a área da foto de perfil */
+        .profile-pic-area {
+            margin-bottom: 30px; /* Espaço abaixo da foto */
+        }
+
+        .profile-pic {
+            width: 120px; /* Tamanho da foto */
+            height: 120px;
+            border-radius: 50%; /* Torna a foto redonda */
+            object-fit: cover;
+            border: 4px solid #333; /* Borda sutil para o tema escuro */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra na foto */
         }
 
         h1 {
-            color: #ffffff; /* Título branco */
+            color: #ffffff;
             margin-bottom: 30px;
             font-size: 32px;
             font-weight: 700;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto mais nítida */
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .link-button {
@@ -60,33 +74,31 @@
             border: none;
             cursor: pointer;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra nos botões mais escura */
-            position: relative; /* Para o pseudo-elemento de brilho */
-            overflow: hidden; /* Para o pseudo-elemento de brilho */
-            z-index: 1; /* Garante que o conteúdo do botão fique acima do pseudo-elemento */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
 
-        /* Efeito de brilho sutil no hover */
-        .link-button::before {
+         .link-button::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1); /* Brilho branco semi-transparente */
+            background: rgba(255, 255, 255, 0.1);
             transition: left 0.4s ease;
-            z-index: 0; /* Fica atrás do conteúdo */
+            z-index: 0;
         }
 
         .link-button:hover::before {
-            left: 100%; /* Move o brilho para a direita */
+            left: 100%;
         }
-
 
         .link-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra no hover mais intensa */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         /* Estilos específicos para cores de redes sociais */
@@ -103,22 +115,27 @@
         }
 
         .save-contact-button {
-            background-color: #17a2b8; /* Cor que mantém um contraste interessante */
+            background-color: #0077b5; /* Um azul marinho que se destaca elegantemente no tema escuro */
             margin-top: 30px;
         }
 
         /* Estilo para o rodapé */
         .footer {
-            margin-top: 20px;
+            margin-top: 30px; /* Mais espaço acima do rodapé */
+            padding-top: 20px; /* Espaço interno acima do texto */
             text-align: center;
             font-size: 14px;
-            color: #b0b0b0; /* Cor cinza clara para o texto do rodapé */
+            color: #888; /* Cor cinza um pouco mais escura para o rodapé */
+            width: 100%; /* Ocupa a largura total */
+            /* Adiciona uma linha divisória sutil no topo */
+            border-top: 1px solid #333;
         }
 
         .footer a {
             color: #b0b0b0; /* Cor do link no rodapé */
             text-decoration: none;
             transition: color 0.2s ease;
+            font-weight: 400; /* Peso normal para o link */
         }
 
         .footer a:hover {
@@ -131,6 +148,10 @@
             .container {
                 padding: 30px 20px;
             }
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
             h1 {
                 font-size: 28px;
             }
@@ -140,6 +161,7 @@
             }
              .footer {
                  font-size: 12px;
+                 padding-top: 15px;
              }
         }
 
@@ -147,9 +169,13 @@
 </head>
 <body>
     <div class="container">
+        <div class="profile-pic-area">
+            <img src="/DevFolio-master/assets/img/ale_foto.jpg" alt="Foto de Perfil de Alessandro" class="profile-pic">
+        </div>
+
         <h1>Alessandro</h1>
 
-        <a href="https://www.instagram.com/ale_ahcor/" target="_blank" class="link-button instagram-button">Instagram</a>
+        <a href="https://www.instagram.com/aptossp/" target="_blank" class="link-button instagram-button">Instagram</a>
 
         <a href="https://wa.me/5511972296075" target="_blank" class="link-button whatsapp-button">WhatsApp</a>
 
