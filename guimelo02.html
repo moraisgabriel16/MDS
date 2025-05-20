@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Melo - Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #FFFFFF; /* White background */
+            color: #333333; /* Dark gray text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #f8f8f8; /* Light gray background for container */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            max-width: 450px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic-area {
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140px; /* Ajuste a altura para centralizar melhor */
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 50% 25%; /* Centraliza mais no rosto */
+            border: 4px solid #D50000;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            background: #fff;
+        }
+
+        h1 {
+            color: #D50000; /* Red color for name */
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: none; /* Removed text shadow for cleaner look */
+        }
+
+        .job-title {
+            color: #555555; /* Dark gray for job title */
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 40px);
+            margin: 15px auto;
+            padding: 18px 20px;
+            color: white; /* White text on buttons */
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(213, 0, 0, 0.25); /* Reddish shadow */
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-color: #D50000; /* Main red for buttons */
+        }
+
+        .link-button i {
+            margin-right: 12px;
+            font-size: 1.2em; /* Slightly larger icons */
+            line-height: 0;
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15); /* Lighter shine effect */
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .link-button:hover::before {
+            left: 0;
+        }
+
+        .link-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(213, 0, 0, 0.35); /* Stronger reddish shadow on hover */
+            background-color: #B70000; /* Darker red on hover */
+        }
+
+        /* Specific button styles are now primarily handled by the main .link-button style
+           Keeping classes in case of future specific needs but they will all be red. */
+        .instagram-button {}
+        .whatsapp-button {}
+        .email-button {}
+        .save-contact-button {}
+        /* Removed website-button and company-button styles */
+
+        .footer {
+            margin-top: 30px; /* Adjusted margin */
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777777; /* Medium gray footer text */
+            background-color: #f0f0f0; /* Very light gray footer background */
+            border-top: 1px solid #e0e0e0; /* Lighter border */
+            width: 100%; /* Make footer full width of the viewport if desired, or constrained like container */
+            box-sizing: border-box;
+        }
+        
+        /* To make footer content align with container width, wrap its content or set max-width */
+        .footer-content {
+             max-width: 450px; /* Match container width */
+             margin: 0 auto;
+        }
+
+
+        .footer a {
+            color: #D50000; /* Red links in footer */
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: #B70000; /* Darker red on hover */
+            text-decoration: underline;
+        }
+
+        .social-links { /* Keeping for structure if you add more later */
+            margin: 10px 0;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            color: #D50000; /* Red social icons */
+            font-size: 20px; /* Slightly larger social icons */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #B70000; /* Darker red on hover */
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 15px; /* Adjusted padding */
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+             .job-title {
+                font-size: 15px;
+            }
+            .link-button {
+                padding: 16px 15px;
+                font-size: 16px; /* Adjusted font size */
+                width: calc(100% - 30px);
+            }
+            .footer {
+                font-size: 12px;
+                padding: 15px 10px; /* Adjusted padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-pic-area">
+            <img src="assets/img/guilherme_foto.jpg" alt="Foto de Perfil de Guilherme Melo" class="profile-pic">
+        </div>
+
+        <h1>Guilherme Melo</h1>
+        <p class="job-title">
+            Vendedor de Venda Direta e Consórcio<br>
+            Osaka Veículos - Uberaba/MG
+        </p>
+
+        <a href="https://www.instagram.com/guimelo02?utm_source=qr&igsh=MWFhbGtxcmthMDMyMg==" target="_blank" class="link-button instagram-button">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://wa.me/553421044606" target="_blank" class="link-button whatsapp-button">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="mailto:guilhermeo@osakaveiculos.com.br" class="link-button email-button">
+            <i class="fas fa-envelope"></i> Email
+        </a>
+
+        <a href="guilhermem_contato.vcf" download="guilhermem_contato.vcf" class="link-button save-contact-button">
+            <i class="fas fa-save"></i> Salvar Contato
+        </a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p>
+                &copy; 2025 <a href="https://www.moraisdigitalsolutions.site/" target="_blank">Morais Digital</a>. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

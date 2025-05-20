@@ -144,11 +144,12 @@
 
         .footer {
             margin-top: 40px;
-            padding-top: 15px;
+            padding: 20px;
             text-align: center;
             font-size: 14px;
             color: #888;
-            width: 100%;
+            background-color: #1F1F1F;
+            border-top: 1px solid #333;
         }
 
         .footer a {
@@ -161,6 +162,22 @@
         .footer a:hover {
             color: #ffffff;
             text-decoration: underline;
+        }
+
+        .social-links {
+            margin: 10px 0;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+            color: #888;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #ffffff;
+            transform: scale(1.2);
         }
 
         @media (max-width: 600px) {
@@ -219,7 +236,19 @@
     </div>
 
     <div class="footer">
-        Criado por <a href="https://www.moraisdigitalsolutions.site/" target="_blank">Morais Digital Solutions</a>
+        <p>Criado por <a href="https://www.moraisdigitalsolutions.site/" target="_blank">Morais Digital Solutions</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/gabrielmorais" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/gabrielmorais" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/gabrielmorais" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Gabriel Morais. Todos os direitos reservados.</p>
     </div>
 
 </body>
