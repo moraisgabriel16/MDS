@@ -202,11 +202,30 @@
                 font-size: 12px;
                 padding: 15px 10px; /* Adjusted padding */
             }
+            .osaka-logo {
+                max-width: 180px;
+                width: 100%;
+                margin-bottom: 18px;
+            }
+        }
+
+        .osaka-logo {
+            display: block;
+            margin: 0 auto 28px auto;
+            max-width: 260px;
+            width: 80%;
+            height: auto;
+            filter: drop-shadow(0 2px 12px rgba(0,0,0,0.13));
+            transition: transform 0.2s;
+        }
+        .osaka-logo:hover {
+            transform: scale(1.04);
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="assets/img/logo_menu_osaka.svg" alt="Logo Osaka Toyota" class="osaka-logo">
         <div class="profile-pic-area">
             <img src="assets/img/guilherme_foto.jpg" alt="Foto de Perfil de Guilherme Melo" class="profile-pic">
         </div>
