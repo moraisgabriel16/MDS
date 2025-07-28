@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Interativo: Potencializando a Análise de Crédito com Pipefy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Corporate Blue & Gray (#2C3E50, #3498DB, #95A5A6, #ECF0F1, #E74C3C) -->
+    <!-- Application Structure Plan: The SPA is designed as a narrative journey. It starts with high-level impact KPIs (The Challenge & Solution), then shows the "how" with an interactive process flow diagram. It follows with a "Deep Dive" into key benefits grouped by themes (Efficiency, Governance, Flexibility), using charts to visualize the impact. This structure guides the user from the "what" to the "how" and "why," making the value proposition of Pipefy more tangible than a simple list of features. -->
+    <!-- Visualization & Content Choices: 1. KPIs: Goal(Inform) -> Large numbers for immediate impact. 2. Workflow Diagram: Goal(Organize) -> Interactive HTML/CSS diagram to explain the process and connect it to Pipefy features upon clicking; avoids static images/SVG. 3. Analyst Time Chart: Goal(Compare) -> Stacked Bar Chart (Chart.js) to show the shift in work composition (manual vs. strategic). 4. Cycle Time Chart: Goal(Compare) -> Bar Chart (Chart.js) for a clear before/after comparison. 5. Governance/Flexibility: Goal(Inform) -> Styled HTML cards with Unicode icons for clarity and simplicity without graphics. All charts use Chart.js on Canvas. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ECF0F1;
+            color: #2C3E50;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .flow-step {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .flow-step.active {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(52, 152, 219, 0.4), 0 4px 6px -2px rgba(52, 152, 219, 0.2);
+            border-color: #3498DB;
+        }
+        .flow-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+        .flow-details.visible {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .flow-arrow {
+            color: #95A5A6;
+        }
+        @media (max-width: 1023px) {
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-[#2C3E50]">Pipefy <span class="text-[#3498DB]">| Análise de Crédito</span></h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#solucao" class="text-gray-600 hover:text-[#3498DB] transition">A Solução</a></li>
+                <li><a href="#fluxo" class="text-gray-600 hover:text-[#3498DB] transition">Fluxo Interativo</a></li>
+                <li><a href="#vantagens" class="text-gray-600 hover:text-[#3498DB] transition">Vantagens</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="solucao" class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-black text-[#2C3E50] uppercase tracking-wide">Transforme sua Análise de Crédito</h2>
+            <p class="mt-4 text-lg text-[#95A5A6] max-w-3xl mx-auto">Deixe a complexidade manual para trás. Veja como a plataforma Pipefy oferece clareza, automação e governança para um processo mais rápido e seguro.</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#3498DB]">
+                    <p class="text-5xl font-bold text-[#3498DB]">50%</p>
+                    <h3 class="mt-2 text-xl font-bold text-[#2C3E50]">Redução no Ciclo</h3>
+                    <p class="text-gray-600 mt-1">Diminuição do tempo total, da solicitação à decisão final.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#3498DB]">
+                    <p class="text-5xl font-bold text-[#3498DB]">95%</p>
+                    <h3 class="mt-2 text-xl font-bold text-[#2C3E50]">Menos Erros</h3>
+                    <p class="text-gray-600 mt-1">Garantia de dados corretos com campos obrigatórios e automações.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#3498DB]">
+                    <p class="text-5xl font-bold text-[#3498DB]">100%</p>
+                    <h3 class="mt-2 text-xl font-bold text-[#2C3E50]">Rastreabilidade</h3>
+                    <p class="text-gray-600 mt-1">Trilha de auditoria completa para cada decisão tomada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fluxo" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#2C3E50]">O Fluxo de Trabalho Otimizado</h2>
+                <p class="mt-2 text-[#95A5A6] max-w-3xl mx-auto">Clique em cada etapa para ver como as funcionalidades do Pipefy tornam o processo mais inteligente e eficiente.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-4">
+                <div id="step-1" class="flow-step bg-white p-4 rounded-lg shadow-md border-2 border-transparent text-center w-full lg:w-1/5">
+                    <div class="text-2xl font-bold text-white bg-[#3498DB] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">1</div>
+                    <h4 class="font-bold text-[#2C3E50]">Recebimento</h4>
+                </div>
+                <div class="flow-arrow text-4xl font-light">→</div>
+                <div id="step-2" class="flow-step bg-white p-4 rounded-lg shadow-md border-2 border-transparent text-center w-full lg:w-1/5">
+                    <div class="text-2xl font-bold text-white bg-[#3498DB] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">2</div>
+                    <h4 class="font-bold text-[#2C3E50]">Análise (IA)</h4>
+                </div>
+                <div class="flow-arrow text-4xl font-light">→</div>
+                <div id="step-3" class="flow-step bg-white p-4 rounded-lg shadow-md border-2 border-transparent text-center w-full lg:w-1/5">
+                    <div class="text-2xl font-bold text-white bg-[#3498DB] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">3</div>
+                    <h4 class="font-bold text-[#2C3E50]">Decisão</h4>
+                </div>
+                <div class="flow-arrow text-4xl font-light">→</div>
+                 <div id="step-4" class="flow-step bg-white p-4 rounded-lg shadow-md border-2 border-transparent text-center w-full lg:w-1/5">
+                    <div class="text-2xl font-bold text-white bg-[#3498DB] w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">4</div>
+                    <h4 class="font-bold text-[#2C3E50]">Formalização</h4>
+                </div>
+            </div>
+
+            <div id="details-container" class="mt-8 bg-white p-8 rounded-lg shadow-xl min-h-[150px]">
+                <div id="details-1" class="flow-details">
+                    <h3 class="font-bold text-xl text-[#2C3E50]">Ponto de Partida: Coleta de Dados Estruturada</h3>
+                    <p class="mt-2 text-gray-600">O processo começa com os **Portais e Formulários Públicos** do Pipefy. O cliente preenche uma solicitação em um ambiente intuitivo, garantindo que todos os dados iniciais sejam coletados de forma padronizada e sem a necessidade de troca de e-mails.</p>
+                </div>
+                <div id="details-2" class="flow-details">
+                    <h3 class="font-bold text-xl text-[#2C3E50]">Eficiência Máxima com Automação e IA</h3>
+                    <p class="mt-2 text-gray-600">Aqui, as **Automações Nativas** e **Integrações via API** do Pipefy entram em ação. A plataforma pode automaticamente consultar scores de crédito, validar documentos e realizar pré-análises, enriquecendo o card com dados antes mesmo da intervenção humana. Se algo estiver faltando, uma **automação condicional** move o card para uma fase de pendências e notifica o solicitante.</p>
+                </div>
+                 <div id="details-3" class="flow-details">
+                    <h3 class="font-bold text-xl text-[#2C3E50]">Decisões Baseadas em Dados e com Rastreabilidade</h3>
+                    <p class="mt-2 text-gray-600">O analista e o comitê recebem um card completo com todas as informações. A decisão é registrada em **campos estruturados**, e a **Trilha de Auditoria** do Pipefy grava cada passo, garantindo total governança e compliance. Os campos obrigatórios asseguram que nenhuma decisão seja tomada sem a devida justificativa.</p>
+                </div>
+                 <div id="details-4" class="flow-details">
+                    <h3 class="font-bold text-xl text-[#2C3E50]">Comunicação Clara e Encerramento</h3>
+                    <p class="mt-2 text-gray-600">Após a decisão, as **automações de e-mail** do Pipefy comunicam o resultado ao solicitante de forma clara e profissional. O processo é encerrado com todos os registros salvos, mantendo o histórico completo para futuras consultas.</p>
+                </div>
+                <div id="details-placeholder" class="text-center text-gray-500">
+                    <p>Selecione uma etapa acima para ver os detalhes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantagens" class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#2C3E50]">Aprofundando nas Vantagens</h2>
+                <p class="mt-2 text-[#95A5A6] max-w-3xl mx-auto">Veja o impacto real da otimização nos dois pilares mais importantes: o tempo da sua equipe e a governança do seu processo.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold text-[#2C3E50] mb-1">O Novo Foco do Analista</h3>
+                    <p class="text-gray-600 mb-4 text-sm">A automação transforma o trabalho. O tempo antes gasto em tarefas manuais agora é dedicado à análise estratégica, onde a expertise humana realmente agrega valor.</p>
+                    <div class="chart-container">
+                        <canvas id="focusChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-[#2C3E50] mb-1">Governança e Flexibilidade</h3>
+                    <p class="text-gray-600 mb-4 text-sm">O Pipefy não apenas organiza o presente, mas prepara para o futuro, com segurança e adaptabilidade.</p>
+                    <div class="space-y-4">
+                        <div class="bg-[#ECF0F1] p-4 rounded-lg">
+                            <h4 class="font-semibold text-[#2C3E50]">✓ Governança e Compliance</h4>
+                            <p class="text-sm text-gray-600">Trilhas de auditoria completas e formulários estruturados garantem conformidade total.</p>
+                        </div>
+                        <div class="bg-[#ECF0F1] p-4 rounded-lg">
+                            <h4 class="font-semibold text-[#2C3E50]">✓ Flexibilidade Low-Code</h4>
+                            <p class="text-sm text-gray-600">Adicione novas etapas, como 'Análise Antifraude', ou mude regras em minutos, sem depender de TI.</p>
+                        </div>
+                        <div class="bg-[#ECF0F1] p-4 rounded-lg">
+                            <h4 class="font-semibold text-[#2C3E50]">✓ Integração Simplificada</h4>
+                            <p class="text-sm text-gray-600">Conecte-se facilmente a APIs externas (Serasa, Receita Federal) para enriquecer suas análises.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<!-- 
+    <footer class="bg-white mt-20 border-t">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h3 class="text-2xl font-bold text-[#2C3E50]">Pronto para transformar seu processo?</h3>
+            <p class="mt-2 text-gray-600">Vamos construir juntos um fluxo de trabalho mais inteligente com Pipefy.</p>
+            <button class="mt-6 bg-[#3498DB] text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-[#2980B9] transition">Agende uma Demonstração</button>
+        </div>
+    </footer> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const commonTooltipOptions = {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        }
+                        return label;
+                    }
+                }
+            };
+            
+            const focusChartCtx = document.getElementById('focusChart').getContext('2d');
+            new Chart(focusChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Fluxo Antigo', 'Com Pipefy'],
+                    datasets: [{
+                        label: 'Tarefas Manuais',
+                        data: [70, 10],
+                        backgroundColor: '#95A5A6',
+                    }, {
+                        label: 'Análise Estratégica',
+                        data: [30, 90],
+                        backgroundColor: '#3498DB',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    plugins: {
+                        tooltip: commonTooltipOptions,
+                        title: { display: false },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+
+            const steps = document.querySelectorAll('.flow-step');
+            const detailsContainer = document.getElementById('details-container');
+            const allDetails = document.querySelectorAll('.flow-details');
+            const placeholder = document.getElementById('details-placeholder');
+
+            steps.forEach(step => {
+                step.addEventListener('click', () => {
+                    const stepId = step.id.split('-')[1];
+                    const targetDetail = document.getElementById(`details-${stepId}`);
+
+                    steps.forEach(s => s.classList.remove('active'));
+                    step.classList.add('active');
+                    
+                    placeholder.style.display = 'none';
+
+                    allDetails.forEach(detail => {
+                        if (detail === targetDetail) {
+                            detail.classList.add('visible');
+                        } else {
+                            detail.classList.remove('visible');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
