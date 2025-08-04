@@ -19,6 +19,17 @@
   <link rel="stylesheet" href="assets/css/lazuli.css" />
 </head>
 <body>
+  <!-- Header -->
+  <header class="bg-primary text-white py-4 mb-4 shadow">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="Logo" style="height:40px; margin-right:16px;">
+        <h1 class="h4 mb-0">Painel de Serviços Lazuli</h1>
+      </div>
+      <span class="fw-bold"><i class="bi bi-person-circle"></i> Admin</span>
+    </div>
+  </header>
+
   <!-- Modal de Login -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
@@ -45,59 +56,81 @@
   </div>
 
   <main class="container my-5" id="mainContent" style="display:none;">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Cadastro de Serviços</h2>
-      <p class="text-muted">Preencha o formulário abaixo para cadastrar um novo serviço.</p>
-    </div>
-
-    <form id="serviceForm" class="needs-validation" novalidate>
-      <div class="mb-3">
-        <label for="name" class="form-label">Nome</label> <!-- Alterado de "Nome do Serviço" para "Nome" -->
-        <input type="text" class="form-control" id="name" name="name" required />
-        <div class="invalid-feedback">Por favor, insira o nome.</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="category" class="form-label">Categoria</label>
-        <input list="categories" class="form-control" id="category" name="category" required />
-        <datalist id="categories">
-          <!-- Categorias serão carregadas dinamicamente -->
-        </datalist>
-        <div class="invalid-feedback">Por favor, insira a categoria.</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="contact" class="form-label">Contato (WhatsApp)</label>
-        <input type="text" class="form-control" id="contact" name="contact" required />
-        <div class="invalid-feedback">Por favor, insira o número de contato.</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="tower" class="form-label">Torre</label>
-        <input type="text" class="form-control" id="tower" name="tower" required />
-        <div class="invalid-feedback">Por favor, insira a torre.</div>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
-
-    <div class="mt-5">
-      <h3 class="fw-bold">Deletar Serviço</h3>
-      <form id="deleteForm" class="needs-validation" novalidate>
-        <div class="mb-3">
-          <label for="serviceId" class="form-label">ID do Serviço</label>
-          <input type="text" class="form-control" id="serviceId" name="serviceId" required />
-          <div class="invalid-feedback">Por favor, insira o ID do serviço.</div>
+    <div class="row g-4">
+      <!-- Cadastro e Categorias -->
+      <div class="col-lg-5">
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-header bg-primary text-white">
+            <h2 class="h5 mb-0"><i class="bi bi-plus-circle"></i> Cadastro de Serviço</h2>
+          </div>
+          <div class="card-body">
+            <form id="serviceForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" name="name" required />
+                <div class="invalid-feedback">Por favor, insira o nome.</div>
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Categoria</label>
+                <input list="categories" class="form-control" id="category" name="category" required />
+                <datalist id="categories"></datalist>
+                <div class="invalid-feedback">Por favor, insira a categoria.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contact" class="form-label">Contato (WhatsApp)</label>
+                <input type="text" class="form-control" id="contact" name="contact" required />
+                <div class="invalid-feedback">Por favor, insira o número de contato.</div>
+              </div>
+              <div class="mb-3">
+                <label for="tower" class="form-label">Torre</label>
+                <input type="text" class="form-control" id="tower" name="tower" required />
+                <div class="invalid-feedback">Por favor, insira a torre.</div>
+              </div>
+              <button type="submit" class="btn btn-success w-100"><i class="bi bi-check-circle"></i> Cadastrar</button>
+            </form>
+          </div>
         </div>
-        <button type="submit" class="btn btn-danger">Deletar</button>
-      </form>
-    </div>
-
-    <div class="mt-5">
-      <h3 class="fw-bold">Serviços Cadastrados</h3>
-      <ul id="serviceList" class="list-group">
-        <!-- Serviços serão listados aqui -->
-      </ul>
+        <!-- Categorias existentes -->
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-header bg-info text-white">
+            <h2 class="h6 mb-0"><i class="bi bi-tags"></i> Categorias Existentes</h2>
+          </div>
+          <div class="card-body">
+            <div id="categoryGroups">
+              <!-- Categorias agrupadas serão listadas aqui -->
+            </div>
+          </div>
+        </div>
+        <!-- Exclusão -->
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-danger text-white">
+            <h2 class="h6 mb-0"><i class="bi bi-trash"></i> Deletar Serviço</h2>
+          </div>
+          <div class="card-body">
+            <form id="deleteForm" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <label for="serviceId" class="form-label">ID do Serviço</label>
+                <input type="text" class="form-control" id="serviceId" name="serviceId" required />
+                <div class="invalid-feedback">Por favor, insira o ID do serviço.</div>
+              </div>
+              <button type="submit" class="btn btn-danger w-100"><i class="bi bi-trash"></i> Deletar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Lista -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-secondary text-white">
+            <h2 class="h5 mb-0"><i class="bi bi-list-ul"></i> Serviços Cadastrados</h2>
+          </div>
+          <div class="card-body p-0">
+            <ul id="serviceList" class="list-group list-group-flush">
+              <!-- Serviços serão listados aqui -->
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -164,7 +197,7 @@
         }
       });
 
-      // Busca categorias únicas do backend
+      // Busca categorias únicas do backend e agrupa por inicial
       async function fetchCategories() {
         try {
           const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services');
@@ -177,9 +210,27 @@
                 categoriesSet.add(service.category.trim().toLowerCase());
               }
             });
-            window.existingCategories = Array.from(categoriesSet);
+            const categoriesArr = Array.from(categoriesSet).sort();
+            window.existingCategories = categoriesArr;
+            // Preenche datalist
             const datalist = document.getElementById('categories');
-            datalist.innerHTML = Array.from(categoriesSet).map(category => `<option value="${category}"></option>`).join('');
+            datalist.innerHTML = categoriesArr.map(category => `<option value="${category}"></option>`).join('');
+
+            // Agrupa por inicial
+            const groups = {};
+            categoriesArr.forEach(cat => {
+              const initial = cat.charAt(0).toUpperCase();
+              if (!groups[initial]) groups[initial] = [];
+              groups[initial].push(cat);
+            });
+            // Renderiza grupos
+            const categoryGroups = document.getElementById('categoryGroups');
+            categoryGroups.innerHTML = Object.keys(groups).sort().map(initial => `
+              <div class="mb-2">
+                <span class="fw-bold text-primary">${initial}</span>:
+                ${groups[initial].map(cat => `<span class="badge bg-info text-dark me-1 mb-1">${cat}</span>`).join(' ')}
+              </div>
+            `).join('');
           } else {
             console.error('Erro ao buscar categorias.');
           }
