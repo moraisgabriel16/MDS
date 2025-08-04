@@ -283,11 +283,6 @@
         const contact = document.getElementById('contact').value;
         const tower = document.getElementById('tower').value;
 
-        // Validação de categoria duplicada (case-insensitive, ignora espaços)
-        if (window.existingCategories && window.existingCategories.includes(category.trim().toLowerCase())) {
-          alert('Esta categoria já existe! Por favor, selecione-a da lista ou escolha outro nome.');
-          return;
-        }
 
         const formData = { name, category, contact, tower };
 
