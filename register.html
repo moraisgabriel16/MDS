@@ -19,7 +19,32 @@
   <link rel="stylesheet" href="assets/css/lazuli.css" />
 </head>
 <body>
-  <main class="container my-5">
+  <!-- Modal de Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login de Administrador</h5>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label for="username" class="form-label">Usuário</label>
+              <input type="text" class="form-control" id="username" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+          </form>
+          <div id="loginError" class="text-danger mt-2" style="display:none;">Usuário ou senha inválidos!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container my-5" id="mainContent" style="display:none;">
     <div class="text-center mb-5">
       <h2 class="fw-bold">Cadastro de Serviços</h2>
       <p class="text-muted">Preencha o formulário abaixo para cadastrar um novo serviço.</p>
@@ -121,203 +146,213 @@
 
   <!-- Script for form submission -->
   <script>
-    async function fetchCategories() {
-      try {
-        const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services');
-        if (response.ok) {
-          const services = await response.json();
-          const categories = [...new Set(services.map(service => service.category))].sort(); // Remove duplicados e ordena
-          const datalist = document.getElementById('categories');
-          datalist.innerHTML = categories.map(category => `<option value="${category}"></option>`).join('');
-        } else {
-          console.error('Erro ao buscar categorias.');
-        }
-      } catch (error) {
-        console.error('Erro ao buscar categorias:', error);
-      }
-    }
-
+    // Unificado: Login, fetch, cadastro, edição, exclusão
     document.addEventListener('DOMContentLoaded', () => {
-      fetchCategories(); // Carregar categorias ao carregar a página
-      fetchServices();   // Carregar serviços ao carregar a página
-    });
-
-    document.getElementById('serviceForm').addEventListener('submit', async function (event) {
-      event.preventDefault();
-      if (!this.checkValidity()) {
-        this.classList.add('was-validated');
-        return;
-      }
-
-      const formData = {
-        name: document.getElementById('name').value,
-        category: document.getElementById('category').value,
-        contact: document.getElementById('contact').value,
-        tower: document.getElementById('tower').value,
-      };
-
-      try {
-        const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
-          alert('Serviço cadastrado com sucesso!');
-          this.reset();
-          this.classList.remove('was-validated');
+      const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      loginModal.show();
+      document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const user = document.getElementById('username').value.trim();
+        const pass = document.getElementById('password').value;
+        if (user === 'admin' && pass === 'admin123') {
+          loginModal.hide();
+          document.getElementById('mainContent').style.display = 'block';
+          fetchCategories();
           fetchServices();
         } else {
-          const errorData = await response.json();
-          alert(`Erro ao cadastrar serviço: ${errorData.error}`);
+          document.getElementById('loginError').style.display = 'block';
         }
-      } catch (error) {
-        console.error('Erro ao enviar o formulário:', error);
-        alert('Erro ao cadastrar serviço. Tente novamente mais tarde.');
-      }
-    });
+      });
 
-    document.getElementById('deleteForm').addEventListener('submit', async function (event) {
-      event.preventDefault();
-      if (!this.checkValidity()) {
-        this.classList.add('was-validated');
-        return;
-      }
-
-      const serviceId = document.getElementById('serviceId').value;
-
-      if (!confirm("Tem certeza que deseja deletar este serviço?")) return;
-
-      try {
-        const response = await fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`, {
-          method: 'DELETE',
-        });
-
-        if (response.ok) {
-          alert('Serviço deletado com sucesso!');
-          this.reset();
-          this.classList.remove('was-validated');
-          fetchServices();
-        } else {
-          const errorData = await response.json();
-          alert(`Erro ao deletar serviço: ${errorData.error}`);
+      // Busca categorias únicas do backend
+      async function fetchCategories() {
+        try {
+          const response = await fetch('http://localhost:5000/api/services');
+          if (response.ok) {
+            const services = await response.json();
+            // Remove duplicadas (case-insensitive, ignora espaços)
+            const categoriesSet = new Set();
+            services.forEach(service => {
+              if (service.category) {
+                categoriesSet.add(service.category.trim().toLowerCase());
+              }
+            });
+            window.existingCategories = Array.from(categoriesSet);
+            const datalist = document.getElementById('categories');
+            datalist.innerHTML = Array.from(categoriesSet).map(category => `<option value="${category}"></option>`).join('');
+          } else {
+            console.error('Erro ao buscar categorias.');
+          }
+        } catch (error) {
+          console.error('Erro ao buscar categorias:', error);
         }
-      } catch (error) {
-        console.error('Erro ao deletar o serviço:', error);
-        alert('Erro ao deletar serviço. Tente novamente mais tarde.');
       }
-    });
 
-    async function fetchServices() {
-      try {
-        const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services');
-        if (response.ok) {
-          const services = await response.json();
-          const serviceList = document.getElementById('serviceList');
-          serviceList.innerHTML = '';
+      // Carregar serviços
+      async function fetchServices() {
+        try {
+          const response = await fetch('http://localhost:5000/api/services');
+          if (response.ok) {
+            const services = await response.json();
+            const serviceList = document.getElementById('serviceList');
+            serviceList.innerHTML = '';
+            services.forEach(service => {
+              const listItem = document.createElement('li');
+              listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+              listItem.innerHTML = `
+                <span>
+                  <strong>${service.name}</strong> - ${service.category} - ${service.contact} - ${service.tower}
+                </span>
+                <div>
+                  <button class="btn btn-warning btn-sm me-2" onclick="editService('${service._id}')">Editar</button>
+                  <button class="btn btn-danger btn-sm" onclick="deleteService('${service._id}')">Deletar</button>
+                </div>
+              `;
+              serviceList.appendChild(listItem);
+            });
+          } else {
+            alert('Erro ao buscar serviços.');
+          }
+        } catch (error) {
+          console.error('Erro ao buscar serviços:', error);
+          alert('Erro ao buscar serviços. Tente novamente mais tarde.');
+        }
+      }
 
-          services.forEach(service => {
-            const listItem = document.createElement('li');
-            listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-            listItem.innerHTML = `
-              <span>
-                <strong>${service.name}</strong> - ${service.category} - ${service.contact} - ${service.tower}
-              </span>
-              <div>
-                <button class="btn btn-warning btn-sm me-2" onclick="editService('${service._id}')">Editar</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteService('${service._id}')">Deletar</button>
-              </div>
-            `;
-            serviceList.appendChild(listItem);
+      // Cadastro de serviço
+      document.getElementById('serviceForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!this.checkValidity()) {
+          this.classList.add('was-validated');
+          return;
+        }
+
+        const name = document.getElementById('name').value;
+        const category = document.getElementById('category').value;
+        const contact = document.getElementById('contact').value;
+        const tower = document.getElementById('tower').value;
+
+        // Validação de categoria duplicada (case-insensitive, ignora espaços)
+        if (window.existingCategories && window.existingCategories.includes(category.trim().toLowerCase())) {
+          alert('Esta categoria já existe! Por favor, selecione-a da lista ou escolha outro nome.');
+          return;
+        }
+
+        const formData = { name, category, contact, tower };
+
+        try {
+          const response = await fetch('http://localhost:5000/api/services', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
           });
-        } else {
-          alert('Erro ao buscar serviços.');
+
+          if (response.ok) {
+            alert('Serviço cadastrado com sucesso!');
+            this.reset();
+            this.classList.remove('was-validated');
+            fetchCategories();
+            fetchServices();
+          } else {
+            const errorData = await response.json();
+            alert(`Erro ao cadastrar serviço: ${errorData.error}`);
+          }
+        } catch (error) {
+          console.error('Erro ao enviar o formulário:', error);
+          alert('Erro ao cadastrar serviço. Tente novamente mais tarde.');
         }
-      } catch (error) {
-        console.error('Erro ao buscar serviços:', error);
-        alert('Erro ao buscar serviços. Tente novamente mais tarde.');
-      }
-    }
+      });
 
-    async function deleteService(serviceId) {
-      if (!confirm("Tem certeza que deseja deletar este serviço?")) return;
-
-      try {
-        const response = await fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`, {
-          method: 'DELETE',
-        });
-
-        if (response.ok) {
-          alert('Serviço deletado com sucesso!');
-          fetchServices();
-        } else {
-          const errorData = await response.json();
-          alert(`Erro ao deletar serviço: ${errorData.error}`);
+      // Deletar serviço
+      document.getElementById('deleteForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!this.checkValidity()) {
+          this.classList.add('was-validated');
+          return;
         }
-      } catch (error) {
-        console.error('Erro ao deletar o serviço:', error);
-        alert('Erro ao deletar serviço. Tente novamente mais tarde.');
-      }
-    }
 
-    function editService(serviceId) {
-      fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`)
-        .then(response => response.json())
-        .then(service => {
-          document.getElementById('editServiceId').value = serviceId; // Corrigido para usar o ID correto
-          document.getElementById('editName').value = service.name;
-          document.getElementById('editCategory').value = service.category;
-          document.getElementById('editContact').value = service.contact;
-          document.getElementById('editTower').value = service.tower;
-          const editModal = new bootstrap.Modal(document.getElementById('editServiceModal'));
-          editModal.show();
-        })
-        .catch(error => {
-          console.error('Erro ao buscar serviço para edição:', error);
-          alert('Erro ao buscar serviço. Tente novamente mais tarde.');
-        });
-    }
+        const serviceId = document.getElementById('serviceId').value;
 
-    document.getElementById('editServiceForm').addEventListener('submit', async function (event) {
-      event.preventDefault();
-      if (!this.checkValidity()) {
-        this.classList.add('was-validated');
-        return;
-      }
+        if (!confirm("Tem certeza que deseja deletar este serviço?")) return;
 
-      const serviceId = document.getElementById('editServiceId').value; // Certifique-se de que o ID está correto
-      const updatedData = {
-        name: document.getElementById('editName').value,
-        category: document.getElementById('editCategory').value,
-        contact: document.getElementById('editContact').value,
-        tower: document.getElementById('editTower').value,
-      };
+        try {
+          const response = await fetch(`http://localhost:5000/api/services/${serviceId}`, {
+            method: 'DELETE',
+          });
 
-      try {
-        const response = await fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(updatedData),
-        });
-
-        if (response.ok) {
-          alert('Serviço atualizado com sucesso!');
-          const editModal = bootstrap.Modal.getInstance(document.getElementById('editServiceModal'));
-          editModal.hide();
-          fetchServices();
-        } else {
-          const errorData = await response.json();
-          alert(`Erro ao atualizar serviço: ${errorData.error}`);
+          if (response.ok) {
+            alert('Serviço deletado com sucesso!');
+            this.reset();
+            this.classList.remove('was-validated');
+            fetchCategories();
+            fetchServices();
+          } else {
+            const errorData = await response.json();
+            alert(`Erro ao deletar serviço: ${errorData.error}`);
+          }
+        } catch (error) {
+          console.error('Erro ao deletar o serviço:', error);
+          alert('Erro ao deletar serviço. Tente novamente mais tarde.');
         }
-      } catch (error) {
-        console.error('Erro ao atualizar o serviço:', error);
-        alert('Erro ao atualizar serviço. Tente novamente mais tarde.');
+      });
+
+      // Editar serviço
+      window.editService = function(serviceId) {
+        fetch(`http://localhost:5000/api/services/${serviceId}`)
+          .then(response => response.json())
+          .then(service => {
+            document.getElementById('editServiceId').value = serviceId;
+            document.getElementById('editName').value = service.name;
+            document.getElementById('editCategory').value = service.category;
+            document.getElementById('editContact').value = service.contact;
+            document.getElementById('editTower').value = service.tower;
+            const editModal = new bootstrap.Modal(document.getElementById('editServiceModal'));
+            editModal.show();
+          })
+          .catch(error => {
+            console.error('Erro ao buscar serviço para edição:', error);
+            alert('Erro ao buscar serviço. Tente novamente mais tarde.');
+          });
       }
+
+      document.getElementById('editServiceForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (!this.checkValidity()) {
+          this.classList.add('was-validated');
+          return;
+        }
+
+        const serviceId = document.getElementById('editServiceId').value;
+        const updatedData = {
+          name: document.getElementById('editName').value,
+          category: document.getElementById('editCategory').value,
+          contact: document.getElementById('editContact').value,
+          tower: document.getElementById('editTower').value,
+        };
+
+        try {
+          const response = await fetch(`http://localhost:5000/api/services/${serviceId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedData),
+          });
+
+          if (response.ok) {
+            alert('Serviço atualizado com sucesso!');
+            const editModal = bootstrap.Modal.getInstance(document.getElementById('editServiceModal'));
+            editModal.hide();
+            fetchCategories();
+            fetchServices();
+          } else {
+            const errorData = await response.json();
+            alert(`Erro ao atualizar serviço: ${errorData.error}`);
+          }
+        } catch (error) {
+          console.error('Erro ao atualizar o serviço:', error);
+          alert('Erro ao atualizar serviço. Tente novamente mais tarde.');
+        }
+      });
     });
-
-    // Carregar serviços ao carregar a página
-    document.addEventListener('DOMContentLoaded', fetchServices);
   </script>
 </body>
 </html>
