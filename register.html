@@ -403,6 +403,26 @@
           alert('Erro ao atualizar serviço. Tente novamente mais tarde.');
         }
       });
+      // Deletar serviço via botão na lista
+      window.deleteService = async function(serviceId) {
+        if (!confirm("Tem certeza que deseja deletar este serviço?")) return;
+        try {
+          const response = await fetch(`https://backend-rust-phi-51.vercel.app/api/services/${serviceId}`, {
+            method: 'DELETE',
+          });
+          if (response.ok) {
+            alert('Serviço deletado com sucesso!');
+            fetchCategories();
+            fetchServices();
+          } else {
+            const errorData = await response.json();
+            alert(`Erro ao deletar serviço: ${errorData.error}`);
+          }
+        } catch (error) {
+          console.error('Erro ao deletar o serviço:', error);
+          alert('Erro ao deletar serviço. Tente novamente mais tarde.');
+        }
+      }
     });
   </script>
 </body>
