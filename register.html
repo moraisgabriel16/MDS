@@ -167,7 +167,7 @@
       // Busca categorias únicas do backend
       async function fetchCategories() {
         try {
-          const response = await fetch('http://localhost:5000/api/services');
+          const response = await fetch('https://backend-rust-phi-51.vercel.app/api/services');
           if (response.ok) {
             const services = await response.json();
             // Remove duplicadas (case-insensitive, ignora espaços)
